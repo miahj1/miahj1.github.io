@@ -3,6 +3,15 @@ hr {
   margin-bottom: 20px;
 }
 
+/*Changing overall color of displayed links */
+a:link {
+  color: #1300a1;
+}
+
+a:visited {
+  color: #5e0f9e;
+}
+
 /* Post navigation links */
 .post_navi {
   display: flex;
