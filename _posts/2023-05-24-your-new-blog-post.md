@@ -1,3 +1,9 @@
+---
+layout: post
+title: Blog Post Title From First Header
+published: false
+---
+
 ## This is my first blog post
 
 Hello, this is my first post. Here I am testing some code:
