@@ -28,9 +28,9 @@ in later years. However, I won't try to do every statistic on this list, but it 
 
 # Tools
 1. Python
-2. Spotify Python API
-3. Last.FM Python API
-4. R 
+2. R
+3. Spotify Python API
+4. Last.FM Python API
 
 Python will not be used to finalize any visualizations. The matplotlib module is frustrating to use so much that the spotify dev team 
-came up with their own module called chartify instead of falling into that awful rabbit hole I will use R to finalize visuals.
+came up with their own module called [chartify](https://github.com/spotify/chartify) instead of falling into that awful rabbit hole I will use R to finalize visuals.
