@@ -11,7 +11,7 @@ on which API is less strict to me abusing them.
 
 Let's take a look at some of the statistics wrapped shows:
 1. Top 5 Genres
-2. Listening Personality Calculation
+2. [Listening Personality Calculation](https://engineering.atspotify.com/2023/01/whats-a-listening-personality/)
 3. Minutes Listened, Top Artists, Top Songs, and Top Genre
 4. [Audio Day](https://techcrunch.com/wp-content/uploads/2022/11/Audio-Day-Share.png) which consists of three sections: nights, afternoons, and mornings. 
 Atleast three or four random adjectives are used to describe how the listener was feeling during each section of the day.
