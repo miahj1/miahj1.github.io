@@ -20,7 +20,9 @@ Let's take a look at some of the statistics wrapped shows:
 Atleast three or four random adjectives are used to describe how the listener was feeling during each section of the day.
 6. Top Song
 7. Amount of Artists Listened To
-8. [Audio Aura](https://newsroom.spotify.com/2021-12-01/learn-more-about-the-audio-aura-in-your-spotify-2021-wrapped-with-aura-reader-mystic-michaela/)
+8. [Audio Aura](https://newsroom.spotify.com/2021-12-01/learn-more-about-the-audio-aura-in-your-spotify-2021-wrapped-with-aura-reader-mystic-michaela/) is a gradient
+   style mixture where each color represents a mood e.g. purple represents an energetic listener, green represents a mindful listener, pink represents an optimistic listener, orange
+   represents a rebellious listener, yellow represents a motivated listener, and blue represents an emotional listener.
 
 Some of the statistics such as audio aura displays a meshed visual of colors. If a listener just looked at it, they wouldn't understand what any of the colors
 meant--perhaps this is why it was removed from next year's wrapped. Overall, the team is having a lot of fun seeing what sticks to the wall and removing what doesn't
