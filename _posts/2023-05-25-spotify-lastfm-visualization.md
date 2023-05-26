@@ -18,7 +18,7 @@ Let's take a look at some of the statistics wrapped shows:
 3. Minutes Listened, Top Artists, Top Songs, and Top Genre
 4. [Audio Day](https://techcrunch.com/wp-content/uploads/2022/11/Audio-Day-Share.png) which consists of three sections: nights, afternoons, and mornings. 
 Atleast three or four random adjectives are used to describe how the listener was feeling during each section of the day.
-6. Top Song
+6. [Top Song](https://techcrunch.com/wp-content/uploads/2022/11/Top-Song-Share.png), Date the song was most listened to, Amount of streams for this one song
 7. Amount of Artists Listened To
 8. [Audio Aura](https://newsroom.spotify.com/2021-12-01/learn-more-about-the-audio-aura-in-your-spotify-2021-wrapped-with-aura-reader-mystic-michaela/) is a gradient
    style mixture where each color represents a mood e.g. purple represents an energetic listener, green represents a mindful listener, pink represents an optimistic listener, orange
