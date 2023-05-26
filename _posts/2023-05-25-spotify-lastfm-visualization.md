@@ -1,4 +1,4 @@
-#Visualizing My Spotify or Last.fm Listening Data
+##Visualizing My Spotify or Last.fm Listening Data
 
 # Goal and Plans
 There are graphics that show up at the end of the year on Spotify from an event called wrapped. 
