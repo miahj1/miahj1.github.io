@@ -14,7 +14,7 @@ on which API is less strict to me abusing them.
 
 Let's take a look at some of the statistics wrapped shows:
 1. Top 5 Genres
-2. [Listening Personality](https://engineering.atspotify.com/2023/01/whats-a-listening-personality/) is a calculated visual that 
+2. [Listening Personality](https://engineering.atspotify.com/2023/01/whats-a-listening-personality/) is a calculated visual that takes abitrary parameters.
 3. Minutes Listened, Top Artists, Top Songs, and Top Genre
 4. [Audio Day](https://techcrunch.com/wp-content/uploads/2022/11/Audio-Day-Share.png) which consists of three sections: nights, afternoons, and mornings. 
 Atleast three or four random adjectives are used to describe how the listener was feeling during each section of the day.
@@ -29,8 +29,8 @@ in later years. However, I won't try to do every statistic on this list, but it 
 # Tools
 1. Python
 2. R
-3. Spotify Python API
-4. Last.FM Python API
+3. Spotify Python API Wrapper
+4. Last.FM Python API Wrapper
 
 Python will not be used to finalize any visualizations. The matplotlib module is frustrating to use so much that the spotify dev team 
 came up with their own module called [chartify](https://github.com/spotify/chartify) instead of falling into that awful rabbit hole I will use R to finalize visuals.
