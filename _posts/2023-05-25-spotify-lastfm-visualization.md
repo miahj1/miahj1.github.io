@@ -1,4 +1,5 @@
 ## Visualizing My Spotify or Last.fm Listening Data
+I'm starting a project based on my listening data.
 
 # Goal and Plans
 There are graphics that show up at the end of the year on Spotify from an event called wrapped. 
