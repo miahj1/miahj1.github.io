@@ -14,9 +14,11 @@ on which API is less strict to me abusing them.
 
 Let's take a look at some of the statistics wrapped shows:
 1. Top 5 Genres
-2. [Listening Personality](https://engineering.atspotify.com/2023/01/whats-a-listening-personality/) is a calculated visual that takes abitrary parameters.
-3. Minutes Listened, Top Artists, Top Songs, and Top Genre
-4. [Audio Day](https://techcrunch.com/wp-content/uploads/2022/11/Audio-Day-Share.png) which consists of three sections: nights, afternoons, and mornings. 
+2. Top 5 Artists
+3. Total Amount of Minutes Spent Listening
+4. [Listening Personality](https://engineering.atspotify.com/2023/01/whats-a-listening-personality/) is a calculated visual that takes abitrary parameters.
+5. Minutes Listened, Top Artists, Top Songs, and Top Genre
+6. [Audio Day](https://techcrunch.com/wp-content/uploads/2022/11/Audio-Day-Share.png) which consists of three sections: nights, afternoons, and mornings. 
 Atleast three or four random adjectives are used to describe how the listener was feeling during each section of the day.
 6. [Top Song](https://techcrunch.com/wp-content/uploads/2022/11/Top-Song-Share.png), Date the song was most listened to, Amount of streams for this one song
 7. Amount of Artists Listened To
