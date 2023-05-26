@@ -29,10 +29,10 @@ meant--perhaps this is why it was removed from next year's wrapped. Overall, the
 in later years. However, I won't try to do every statistic on this list, but it would be an interesting sub-goal to achieve.
 
 # Tools
-1. Python
-2. R
-3. Spotify Python API Wrapper
-4. Last.FM Python API Wrapper
++ Python
++ R
++ Spotify Python API Wrapper
++ Last.FM Python API Wrapper
 
 Python will not be used to finalize any visualizations. The matplotlib module is frustrating to use so much that the spotify dev team 
 came up with their own module called [chartify](https://github.com/spotify/chartify) instead of falling into that awful rabbit hole I will use R to finalize visuals.
