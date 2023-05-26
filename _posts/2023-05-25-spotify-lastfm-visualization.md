@@ -20,6 +20,7 @@ Atleast three or four random adjectives are used to describe how the listener wa
 8. [Audio Aura](https://newsroom.spotify.com/2021-12-01/learn-more-about-the-audio-aura-in-your-spotify-2021-wrapped-with-aura-reader-mystic-michaela/)
 
 Some of the statistics such as audio aura displays a meshed visual of colors. If a listener just looked at it, they wouldn't understand what any of the colors
-meant--perhaps this is why it was removed from next year's wrapped.
+meant--perhaps this is why it was removed from next year's wrapped. Overall, the team is having a lot of fun seeing what sticks to the wall and removing what doesn't
+in later years.
 
 # Planning
