@@ -1,3 +1,5 @@
+#Visualizing My Spotify or Last.fm Listening Data
+
 # Goal and Plans
 There are graphics that show up at the end of the year on Spotify from an event called wrapped. 
 Wrapped puts together meaningful statistics about the user's listening activity. The issue with 
