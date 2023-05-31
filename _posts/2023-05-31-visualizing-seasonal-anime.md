@@ -46,5 +46,7 @@ There's multiple elements to each individual anime card such as title, rating, m
 The member field is a total of all the users that have added the show to their list. There's a few more categorizes that I have not mentioned since
 they are not useful for the analysis: all the avaliable parameters are showing in Fig. 1.
 
-![mal_card (1)](https://github.com/miahj1/miahj1.github.io/assets/84815985/40a9afdb-c4ac-436b-981c-9504f7203133)
-Fig. 1 Anime card template used for each show on the MAL seasonal anime section of their website.
+<figure>
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/84815985/242366608-40a9afdb-c4ac-436b-981c-9504f7203133.png" alt="anime_card" style="width:50%">
+  <figcaption><strong>Fig. 1</strong> Anime card template used for each show on the MAL seasonal anime section of their website.</figcaption>
+</figure>
