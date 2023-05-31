@@ -3,11 +3,11 @@
 Anime is released every season i.e. Spring, Winter, Fall, and Summer. The seasons spring and fall showcase huge swaths of multifarious releases unlike winter and summer which have very meager offerings. 
 My goals for this project is to visualize the data after scraping every release for each season for the year of 2022. 
 
-## Tools
+# Tools
 1. Beautiful Soup 4 Python Module to scrape and gather the data.
 2. Pandas to put a dataframe together using the scraped data.
 
-## Metrics
+# Metrics
 1. On what day most shows release.
 2. The highest rated show.
 3. The genre of each show being released per season.
