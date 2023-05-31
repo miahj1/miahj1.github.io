@@ -15,7 +15,7 @@ My goals for this project is to visualize the data after scraping every release 
 5. Word cloud of synopsis. 
 6. Which studios released how many anime.
 
-## Scraping
+# Scraping
 If there’s a need to capture large amount of data, messaging the website owner would make a lot of sense; however, this isn’t the case for this project. 
 When it comes to scraping websites, BS4 module in Python is the best. Let’s load up the relevant modules—requests library is required to fetch content 
 from the website of our choice. The variable `website` is assigned the information fetched from using the requests' function 
