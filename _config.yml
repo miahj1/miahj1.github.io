@@ -5,15 +5,14 @@ description: "The meanderings of a man obsessed with data science and programmin
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
 email: "jabedmiah05@gmail.com"
-#twitter_username: "twitteruser"
 github_username: "miahj1"
 linkedin_username: "miahj1"
+#twitter_username: "twitteruser"
 #facebook_username: username
 #flickr_username: username
 #instagram_username: username
 #pinterest_username: username
 #youtube_username: username
-#googleplus_username: +username
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
@@ -31,6 +30,7 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 titles_from_headings:
   strip_title: true
