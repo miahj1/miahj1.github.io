@@ -62,6 +62,14 @@ Table 1: Features that have multiple unique entries for the `insurance_claims` d
 | insured_education_level    | MD, PhD, Associate, Masters, High School, College, JD |
 | insured_occupation | craft-repair, machine-op-inspct, sales, armed-forces, tech-support, prof-specialty, other-service, priv-house-serv, exec-managerial, protective-serv, transport-moving, handlers-cleaners, adm-clerical, farming-fishing |
 | insured_hobbies | sleeping, reading, board-games, bungie-jumping, base-jumping, golf, camping, dancing, skydiving, movies, hiking, yachting, paintball, chess, kayaking, polo, basketball, video-games, cross-fit, exercise |
+| insured_relationship | husband, other-relative, own-child, unmarried, wife, not-in-family |
+| incident_type | Single Vehicle Collision, Vehicle Theft, Multi-vehicle Collision, Parked Car |
+| collision_type | Side Collision, Rear Collision, Front Collision |
+| incident_severity | Major Damage, Minor Damage, Total Loss, Trivial Damage |
+| authorities_contacted | Police, None, Fire, Other, Ambulance |
+| property_damage | YES, NO |
+| police_report_avaliable | YES, NO |
+| fraud_reported | Y, N |
 
 Before starting a classification project, checking the balance of the datasets does not hurt: the labels in the dataset are binary for `fraud_reported` which contains a value of Y and N—these will be later encoded to 0 and 1 for machine learning purposes. There are 247 fraudulent cases and 753 non-fraudulent cases—a bar graph is shown in Fig. 2. A clear imbalance is visible which can be a problem depending on the type of model that is used for the machine learning section, but that is not the only obstacle: the data is meager and may not be the best for machine learning later the data is resampled to increase the minority class.
 
