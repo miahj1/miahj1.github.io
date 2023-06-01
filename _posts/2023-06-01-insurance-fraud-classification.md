@@ -44,8 +44,7 @@ insurance_claims_df = insurance_claims_df.fillna(insurance_claims_df.mode().iloc
 
 The Kaggle data also did not include the types of values that are given to each categorical column: the code below filters the data types of each column in the data frame by the parameter “object” and prints every unique value. 
 
-```
-python
+```python
 cat_cols = min_df.select_dtypes(include=['object'])
 
 for col in cat_cols:
