@@ -1,5 +1,3 @@
-Here you can say lots of fun things about your site.
+Welcome to my blog!
 
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+I will use my website to showcase projects I am working on and hopefully have completed.
