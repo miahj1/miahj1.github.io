@@ -21,7 +21,7 @@ theme: "minima"
 
 rss: rss
 
-show_excerpts: true
+show_excerpts: false
 
 kramdown:
   syntax_highlighter_opts:
