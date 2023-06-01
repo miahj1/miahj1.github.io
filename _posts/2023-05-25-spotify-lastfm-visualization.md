@@ -1,7 +1,7 @@
-## Visualizing My Spotify or Last.fm Listening Data
+# Visualizing My Spotify or Last.fm Listening Data
 I'm starting a project based on my listening data.
 
-# Goal and Plans
+## Goal and Plans
 There are graphics that show up at the end of the year on Spotify from an event called wrapped. 
 Wrapped puts together meaningful statistics about the user's listening activity. The issue with 
 the current state of the graphics is that they are not as meaningful as sought out to be
@@ -30,7 +30,7 @@ Some of the statistics such as audio aura displays a meshed visual of colors. If
 meant--perhaps this is why it was removed from next year's wrapped. Overall, the team is having a lot of fun seeing what sticks to the wall and removing what doesn't
 in later years. However, I won't try to do every statistic on this list, but it would be an interesting sub-goal to achieve.
 
-# Tools
+## Tools
 + Python
 + R
 + Spotify Python API Wrapper
