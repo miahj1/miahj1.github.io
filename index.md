@@ -1,3 +1,3 @@
 Welcome to my blog!
 
-I will use my website to showcase projects I am working on and hopefully have completed.
+I am currently using my website to showcase projects I am working on and hopefully have them completed soon™.
