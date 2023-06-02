@@ -44,12 +44,12 @@ hr {
   opacity: 0.3;
 }
 
+/* Changing the style for code blocks. */
+
 pre, code {
-  font-size: 15px;
-  border: 1px solid #8854d0;
+  border: 1px solid #a5b1c2;
   border-radius: 5px;
-  background-color: #a55eea;
-  color: white;
+  background-color: #ffffff;
 }
 
 pre {
