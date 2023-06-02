@@ -150,6 +150,11 @@ print(f"Fradulent Females: {((insurance_claims_df['fraud_reported'] == 'Y') & (i
       f"Non-fradulent Males: {((insurance_claims_df['fraud_reported'] == 'N') & (insurance_claims_df['insured_sex'] == 'MALE')).sum()}")
 ```
 
+Let's now graph the results, the `x_axis` variable is assigned the two categories for fraud classification. `y_axis_1` is assigned the values for the female customers while
+`y_axis_2` is assigned the values for the male customers. The code `fig, (ax1, ax2) = plt.subplots(1, 2)` is used to establish two graphs. The function `suptitle()` is 
+normally used for titling the shared plots; however, I want to title the shared x-axis so I set the `y` argument value to `-0` effectively flipping it over to the other end.
+The other styling changes to the graphs are self-explanatory and won't be covered.
+
 ```python
 import matplotlib.pyplot as plt
 
