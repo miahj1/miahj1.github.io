@@ -148,19 +148,30 @@ print(f"Fradulent Females: {((insurance_claims_df['fraud_reported'] == 'Y') & (i
 ```
 
 ```python
-import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 
-X = ['Fradulent','Non-Fradulent']
-Y = [126,411]
-Z = [121,342]
+x_axis = ['Fradulent', 'Non-Fradulent']
+y_axis_1 = [126, 121]
+y_axis_2 = [411, 342]
 
-df = pd.DataFrame(np.c_[Y,Z], index=X)
-df.plot.bar(rot=0)
-plt.legend(["Female", "Male"]);
+fig, (ax1, ax2) = plt.subplots(1, 2)
 
-plt.show()
+# Negative value is used to flip the title to the x-axis.
+plt.suptitle("Type of Fraud", y = -0, fontsize = 13.0)
+
+ax1.set_frame_on(False)
+ax1.grid(axis = 'y', alpha = 0.5)
+ax1.set(ylim=(0, 450))
+ax1.set_ylabel('Total Occurences of Fraud', fontsize = 13.0) 
+ax1.title.set_text('Female') 
+ax1.bar(x_axis, y_axis_1)
+
+ax2.set_frame_on(False)
+ax2.set_yticklabels([])
+ax2.grid(axis = 'y', alpha = 0.5)
+ax2.set(ylim=(0, 450))
+ax2.title.set_text('Male') 
+ax2.bar(x_axis, y_axis_2)
 ```
 
 ![download](https://github.com/miahj1/miahj1.github.io/assets/84815985/b8222424-57a4-48f3-9ef6-eb51fe64fb5d) <br>
