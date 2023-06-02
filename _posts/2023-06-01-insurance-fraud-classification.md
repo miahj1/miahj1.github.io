@@ -131,3 +131,63 @@ If someone were to go over the maximum provided by their coverage, the umbrella 
 Also, the `policy_deductable` is another feature that has eluded me since I am not familiar with automobile insurance deductibles: it looks like policy deductibles are paid out of pocket on a claim which would be the basic definition. However, there is a bit more to it: a higher deductible would mean more is paid out of pocket, but the car insurance rate is lower, and a lower deductible would mean the car insurance rate is higher, but less is paid out of pocket—the inverse of the former. 
 
 I believe that another feature can be engineered after considering the expenses covered by the insurance provider, but due to time constraints that is something I will leave for the future if I do change my mind.
+
+## Visualizing the Dataset in Python
+
+The gender binary split brings into question: How many of the customers that are male or female commit insurance fraud and how many do not? Customers that are female who commit insurance fraud are 126 and their male counterparts are 121: this clearly shows that females commit insurance fraud at a slightly higher amount in this specific dataset. However, if we look at it the other way in-terms of the ones who do not commit insurance fraud, we find that most females about 411 of them do not while 342 males trail behind. A bar graph of the results are shown in Fig. 2.
+
+We use boolean operators such as `==` and `&` to extract the needed information. The equality operation for fradulent feamles checks if the `fraud_reported` column value is true i.e., `Y`
+and the expression after the `&` operation checks if the gender of the insured in the column `insured_sex` is `FEMALE`. The `sum()` function is then used to add every occurence that meets
+the criteria for our boolean expression.
+
+```python
+print(f"Fradulent Females: {((insurance_claims_df['fraud_reported'] == 'Y') & (insurance_claims_df['insured_sex'] == 'FEMALE')).sum()} \n"
+      f"Non-fradulent Females: {((insurance_claims_df['fraud_reported'] == 'N') & (insurance_claims_df['insured_sex'] == 'FEMALE')).sum()}\n"
+      f"Fradulent Males: {((insurance_claims_df['fraud_reported'] == 'Y') & (insurance_claims_df['insured_sex'] == 'MALE')).sum()}\n"
+      f"Non-fradulent Males: {((insurance_claims_df['fraud_reported'] == 'N') & (insurance_claims_df['insured_sex'] == 'MALE')).sum()}")
+```
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+X = ['Fradulent','Non-Fradulent']
+Y = [126,411]
+Z = [121,342]
+
+df = pd.DataFrame(np.c_[Y,Z], index=X)
+df.plot.bar(rot=0)
+plt.legend(["Female", "Male"]);
+
+plt.show()
+```
+
+![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/35bba621-92e7-42e8-afd5-16b0f61b2375)
+
+Moreover, the education level feature allows me to show at what level of education customers are most likely or least likely to commit insurance fraud.
+```python
+education_levels = insurance_claims_df['insured_education_level'].unique()
+
+for education in education_levels:
+  print(f"{education}: {((insurance_claims_df['insured_education_level'] == education) & 
+                        (insurance_claims_df['fraud_reported'] == 'Y')).sum()}")
+```
+
+Using Pandas `unique()` function, I assign the list it returns for the column `insured_education_level` to the declared variable `education_levels`: the function returns all the unique values it finds in that specific column. Next, I iterate through the `education_levels` printing the results of a boolean expression. The expression in-question looks to each education level and its connection to fraudulent activity being ‘Y’ which is added.
+
+```python
+import matplotlib.pyplot as plt
+
+fraud_num = [38, 33, 34, 32, 36, 32, 42]
+
+plt.barh(education_levels, fraud_num)
+plt.ylabel("Level of Education")
+plt.xlabel("Number of Fraud Reported")
+plt.show()
+```
+
+![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/9a6adabc-4996-4191-99ef-eef13d60a759)
+
+
+
