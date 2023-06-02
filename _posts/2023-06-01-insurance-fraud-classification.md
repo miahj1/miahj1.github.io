@@ -119,7 +119,7 @@ Before starting a classification project, checking the balance of the datasets d
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/48399d8b-0fe2-41d0-b7f0-6336c6ec30c5" alt="Bar graph subplot distribution of classes for male and female customers.">
 </p>
 
-<p align="center"><font size="9.5"><strong>Figure 2:</strong> <i>The amount of data per class, fraudlent being the minority class and non-fradulent being the majority class.</i></font></p><br>
+<p align="center"><font size="3"><strong>Figure 2:</strong> <i>The amount of data per class, fraudlent being the minority class and non-fradulent being the majority class.</i></font></p><br>
 
 Let’s get some domain knowledge and then analyze the dataset to find some meaningful insights before I get ahead of myself.
 
