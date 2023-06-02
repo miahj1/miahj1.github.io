@@ -163,7 +163,7 @@ plt.legend(["Female", "Male"]);
 plt.show()
 ```
 
-![download](https://github.com/miahj1/miahj1.github.io/assets/84815985/4307d7ad-0428-4e12-a9af-d688e7ac52a4)  <br>
+![download](https://github.com/miahj1/miahj1.github.io/assets/84815985/b8222424-57a4-48f3-9ef6-eb51fe64fb5d) <br>
 
 Figure 3: Distribution of classes based on gender.
 
