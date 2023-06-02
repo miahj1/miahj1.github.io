@@ -163,7 +163,8 @@ plt.legend(["Female", "Male"]);
 plt.show()
 ```
 
-![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/35bba621-92e7-42e8-afd5-16b0f61b2375)
+![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/35bba621-92e7-42e8-afd5-16b0f61b2375) <br>
+Figure 3: Distribution of classes based on gender.
 
 Moreover, the education level feature allows me to show at what level of education customers are most likely or least likely to commit insurance fraud.
 ```python
