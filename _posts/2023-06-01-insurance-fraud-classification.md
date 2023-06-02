@@ -7,9 +7,9 @@ My project hopes to address these issues: I will explore a singular Standard Vec
 
 ## Preprocessing and Investigation
 
-The dataset used for the analysis is from Kaggle, Auto Insurance Claims Data (bit.ly/3JwvwTk). It is not a “perfect” dataset as there is no description of what each column means; currently, the dataset consists of 40 columns and 1,000 rows. Tools I will use are popular modules from Python such as pandas, NumPy, seaborn, scikit-learn, matplotlib, mlextend, and imbalanced-learning. The code for the project is available in a Google Collaboratory Jupyter notebook (bit.ly/408gadf); however, it is not as organized as this document. Also, some codes for plotting graphs are left out but are available in the notebook.
+The dataset used for the analysis is from Kaggle, Auto Insurance Claims Data (bit.ly/3JwvwTk). It is not a “perfect” dataset as there is no description of what each column means; currently, the dataset consists of 40 columns and 1,000 rows. Tools I will use are popular modules from Python such as pandas, numpy, seaborn, scikit-learn, matplotlib, mlextend, and imbalanced-learning. The code for the project is available in a Google Collaboratory Jupyter notebook (bit.ly/408gadf); however, it is not as organized as this document. Also, some codes for plotting graphs are left out but are available in the notebook.
 
-The document is structured in this manner: variables, columns, and functions will be italicized. In hopes of preventing confusion between variables and functions: functions include “()” parentheticals. Code will be included and if output is needed it will immediately follow. Long URLs that take up space are shortened using bit.ly. Output from the code that takes up a large amount of vertical real estate are snipped and horizontally stitched. 
+The document is structured in this manner: variables, columns, and functions will be formatted as follows, `text`. In hopes of preventing confusion between variables and functions: functions include “()” parentheticals. Code will be included and if output is needed it will immediately follow. Long URLs that take up space are shortened using bit.ly. Output from the code that takes up a large amount of vertical real estate are snipped and horizontally stitched. 
 
 Before I begin the analysis, the best thing to do is to preprocess the data for null or missing values as per machine learning purposes as well as analysis. In Fig. 1, there are null values for the columns: `collision_type`, `property_damage`, `police_report_avaliable`, `_c39`; the last column isn’t shown in the output since it has been dropped beforehand after seeing that all it offered is null values.
 
@@ -17,14 +17,55 @@ Before I begin the analysis, the best thing to do is to preprocess the data for 
 insurance_claims_df = insurance_claims_df.drop('_c39', axis=1)
 ```
 
+The piped function below first checks if there are null values in the dataframe using `isna()` and then the `sum()` function
+add up the total amount of null values for each column.
+
 ```python
 insurance_claims_df.isna().sum()
 ```
 
-<p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/7f7ce06a-6d5c-407e-976e-b1667953b2f1">
-</p>
-Figure 1: Stitched output of all the summed null values in each column.<br><br>
+```
+months_as_customer               0
+age                              0
+policy_number                    0
+policy_bind_date                 0
+policy_state                     0
+policy_csl                       0
+policy_deductable                0
+policy_annual_premium            0
+umbrella_limit                   0
+insured_zip                      0
+insured_sex                      0
+insured_education_level          0
+insured_occupation               0
+insured_hobbies                  0
+insured_relationship             0
+capital-gains                    0
+capital-loss                     0
+incident_date                    0
+incident_type                    0
+collision_type                 178
+incident_severity                0
+authorities_contacted            0
+incident_state                   0
+incident_city                    0
+incident_location                0
+incident_hour_of_the_day         0
+number_of_vehicles_involved      0
+property_damage                360
+bodily_injuries                  0
+witnesses                        0
+police_report_available        343
+total_claim_amount               0
+injury_claim                     0
+property_claim                   0
+vehicle_claim                    0
+auto_make                        0
+auto_model                       0
+auto_year                        0
+fraud_reported                   0
+```
+Figure 1: Output of all the summed null values in each column.<br><br>
 
 
 The column `police_report_avaliable` has missing data where each one is inputted as “?”—prior to the imputation I have converted each “?” value to NaN using Numpy’s `replace()` function.
