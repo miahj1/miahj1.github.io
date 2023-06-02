@@ -116,10 +116,10 @@ Before starting a classification project, checking the balance of the datasets d
 
 
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/48399d8b-0fe2-41d0-b7f0-6336c6ec30c5" alt="Bar graph subplot distribution of classes for male and female customers.">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/48399d8b-0fe2-41d0-b7f0-6336c6ec30c5" alt="Bar graph distribution of classes.">
 </p>
 
-<p align="center"><font size="3"><strong>Figure 2:</strong> <i>The amount of data per class, fraudlent being the minority class and non-fradulent being the majority class.</i></font></p><br>
+<p align="center"><strong>Figure 2:</strong> <i>The amount of data per class, fraudlent being the minority class and non-fradulent being the majority class.</i></p><br>
 
 Let’s get some domain knowledge and then analyze the dataset to find some meaningful insights before I get ahead of myself.
 
@@ -177,9 +177,12 @@ ax2.title.set_text('Male')
 ax2.bar(x_axis, y_axis_2)
 ```
 
-![download](https://github.com/miahj1/miahj1.github.io/assets/84815985/b8222424-57a4-48f3-9ef6-eb51fe64fb5d) <br>
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/b8222424-57a4-48f3-9ef6-eb51fe64fb5d" alt="Bar graph subplot distribution of classes for male and female customers.">
+</p>
 
-Figure 3: Distribution of classes based on gender.
+<p align="center"><strong>Figure 3:</strong> <i>Distribution of classes based on gender.</i></p><br>
+
 
 Moreover, the education level feature allows me to show at what level of education customers are most likely or least likely to commit insurance fraud.
 ```python
