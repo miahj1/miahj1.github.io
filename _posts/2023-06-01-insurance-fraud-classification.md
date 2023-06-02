@@ -134,7 +134,7 @@ I believe that another feature can be engineered after considering the expenses 
 
 ## Visualizing the Dataset in Python
 
-The gender binary split brings into question: How many of the customers that are male or female commit insurance fraud and how many do not? Customers that are female who commit insurance fraud are 126 and their male counterparts are 121: this clearly shows that females commit insurance fraud at a slightly higher amount in this specific dataset. However, if we look at it the other way in-terms of the ones who do not commit insurance fraud, we find that most females about 411 of them do not while 342 males trail behind. A bar graph of the results are shown in Fig. 2.
+The gender binary split brings into question: How many of the customers that are male or female commit insurance fraud and how many do not? Customers that are female who commit insurance fraud are 126 and their male counterparts are 121: this clearly shows that females commit insurance fraud at a slightly higher amount in this specific dataset. However, if we look at it the other way in-terms of the ones who do not commit insurance fraud, we find that most females about 411 of them do not while 342 males trail behind. A bar graph of the results are shown in Fig. 3.
 
 We use boolean operators such as `==` and `&` to extract the needed information. The equality operation for fradulent females checks if the `fraud_reported` column value is true i.e., `Y`
 and the expression after the `&` operation checks if the gender of the insured in the column `insured_sex` is `FEMALE`. The `sum()` function is then used to add every occurence that meets
