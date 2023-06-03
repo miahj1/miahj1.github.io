@@ -201,17 +201,33 @@ for education in education_levels:
 Using Pandas `unique()` function, I assign the list it returns for the column `insured_education_level` to the declared variable `education_levels`: the function returns all the unique values it finds in that specific column. Next, I iterate through the `education_levels` printing the results of a boolean expression. The expression in-question looks to each education level and its connection to fraudulent activity being ‘Y’ which is added.
 
 ```python
-import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib
 
-fraud_num = [38, 33, 34, 32, 36, 32, 42]
+education_levels = {'MD' : 38,
+                    'Phd' : 33,
+                    'Associate' : 34,
+                    'Masters' : 32,
+                    'High School' : 36,
+                    'College' : 32,
+                    'JD' : 42}
 
-plt.barh(education_levels, fraud_num)
-plt.ylabel("Level of Education")
-plt.xlabel("Number of Fraud Reported")
-plt.show()
+sorted_ed_levels = dict(sorted(education_levels.items(), key=lambda x: x[1]))
+ax = sns.stripplot(x = sorted_ed_levels.values(), y = sorted_ed_levels.keys(), size = 8)
+plt.grid(axis = 'y', alpha = 0.5)
+plt.grid(axis = 'x', alpha = 0.5)
+
+ax.set_frame_on(False)
+ax.set_xlabel("Total Amount of Fradulent Cases", fontsize = 13.0)
+matplotlib.rc('ytick', labelsize=23) 
 ```
 
-![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/9a6adabc-4996-4191-99ef-eef13d60a759)
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/24fb3863-9b71-4e81-8d89-ffa0fe5a0e21" alt="Cleveland dot plot of education type vs amount of fraud.">
+</p>
 
+<p align="center"><strong>Figure 4:</strong> <i>Insurance fraud committed based on insured’s level of education.</i></p><br>
+
+The cleveland dot plot as shown in Fig. 4 reveals that customers with the education level of Juris Doctor (JD) commit the most amounts of insurance fraud while customers with masters and college degrees are on the lower end: this data does not however give an idea of why JD is the highest. 
 
 
