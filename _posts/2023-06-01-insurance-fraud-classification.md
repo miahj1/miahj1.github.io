@@ -114,12 +114,11 @@ Table 1: Features that have multiple unique entries for the `insurance_claims` d
 
 Before starting a classification project, checking the balance of the datasets does not hurt: the labels in the dataset are binary for `fraud_reported` which contains a value of Y and N—these will be later encoded to 0 and 1 for machine learning purposes. There are 247 fraudulent cases and 753 non-fraudulent cases—a bar graph is shown in Fig. 2. A clear imbalance is visible which can be a problem depending on the type of model that is used for the machine learning section, but that is not the only obstacle: the data is meager and may not be the best for machine learning later the data is resampled to increase the minority class.
 
-
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/48399d8b-0fe2-41d0-b7f0-6336c6ec30c5" alt="Bar graph distribution of classes.">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/9db6e418-777b-4608-b60d-ed5803cec456" alt="Bar graph distribution of classes.">
 </p>
 
-<p align="center"><strong>Figure 2:</strong> <i>The amount of data per class, fraudlent being the minority class and non-fradulent being the majority class.</i></p><br>
+<p align="center"><strong>Figure 2:</strong> <i>The amount of data per class, fraudulent being the minority class and non-fraudulent being the majority class.</i></p><br>
 
 Let’s get some domain knowledge and then analyze the dataset to find some meaningful insights before I get ahead of myself.
 
@@ -139,15 +138,15 @@ I believe that another feature can be engineered after considering the expenses 
 
 The gender binary split brings into question: How many of the customers that are male or female commit insurance fraud and how many do not? Customers that are female who commit insurance fraud are 126 and their male counterparts are 121: this clearly shows that females commit insurance fraud at a slightly higher amount in this specific dataset. However, if we look at it the other way in-terms of the ones who do not commit insurance fraud, we find that most females about 411 of them do not while 342 males trail behind. A bar graph of the results are shown in Fig. 3.
 
-We use boolean operators such as `==` and `&` to extract the needed information. The equality operation for fradulent females checks if the `fraud_reported` column value is true i.e., `Y`
+We use boolean operators such as `==` and `&` to extract the needed information. The equality operation for fraudulent females checks if the `fraud_reported` column value is true i.e., `Y`
 and the expression after the `&` operation checks if the gender of the insured in the column `insured_sex` is `FEMALE`. The `sum()` function is then used to add every occurence that meets
 the criteria for our boolean expression.
 
 ```python
-print(f"Fradulent Females: {((insurance_claims_df['fraud_reported'] == 'Y') & (insurance_claims_df['insured_sex'] == 'FEMALE')).sum()} \n"
-      f"Non-fradulent Females: {((insurance_claims_df['fraud_reported'] == 'N') & (insurance_claims_df['insured_sex'] == 'FEMALE')).sum()}\n"
-      f"Fradulent Males: {((insurance_claims_df['fraud_reported'] == 'Y') & (insurance_claims_df['insured_sex'] == 'MALE')).sum()}\n"
-      f"Non-fradulent Males: {((insurance_claims_df['fraud_reported'] == 'N') & (insurance_claims_df['insured_sex'] == 'MALE')).sum()}")
+print(f"Fraudulent Females: {((insurance_claims_df['fraud_reported'] == 'Y') & (insurance_claims_df['insured_sex'] == 'FEMALE')).sum()} \n"
+      f"Non-fraudulent Females: {((insurance_claims_df['fraud_reported'] == 'N') & (insurance_claims_df['insured_sex'] == 'FEMALE')).sum()}\n"
+      f"Fraudulent Males: {((insurance_claims_df['fraud_reported'] == 'Y') & (insurance_claims_df['insured_sex'] == 'MALE')).sum()}\n"
+      f"Non-fraudulent Males: {((insurance_claims_df['fraud_reported'] == 'N') & (insurance_claims_df['insured_sex'] == 'MALE')).sum()}")
 ```
 
 Let's now graph the results, the `x_axis` variable is assigned the two categories for fraud classification. `y_axis_1` is assigned the values for the female customers while
@@ -158,7 +157,7 @@ The other styling changes to the graphs are self-explanatory and won't be covere
 ```python
 import matplotlib.pyplot as plt
 
-x_axis = ['Fradulent', 'Non-Fradulent']
+x_axis = ['Fraudulent', 'Non-Fraudulent']
 y_axis_1 = [126, 121]
 y_axis_2 = [411, 342]
 
@@ -181,9 +180,8 @@ ax2.set(ylim=(0, 450))
 ax2.title.set_text('Male') 
 ax2.bar(x_axis, y_axis_2)
 ```
-
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/b8222424-57a4-48f3-9ef6-eb51fe64fb5d" alt="Bar graph subplot distribution of classes for male and female customers.">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/641d7b8c-4e8c-4ba2-9657-7db064bf4e75" alt="Bar graph subplot distribution of classes for male and female customers.">
 </p>
 
 <p align="center"><strong>Figure 3:</strong> <i>Distribution of classes based on gender.</i></p><br>
@@ -218,12 +216,11 @@ plt.grid(axis = 'y', alpha = 0.5)
 plt.grid(axis = 'x', alpha = 0.5)
 
 ax.set_frame_on(False)
-ax.set_xlabel("Total Amount of Fradulent Cases", fontsize = 13.0)
-matplotlib.rc('ytick', labelsize=23) 
+ax.set_xlabel("Total Amount of Fraudulent Cases", fontsize = 13.0)
+matplotlib.rc('ytick', labelsize=11) 
 ```
-
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/24fb3863-9b71-4e81-8d89-ffa0fe5a0e21" alt="Cleveland dot plot of education type vs amount of fraud.">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/94242eef-86ba-444d-81fd-e69c8bba91fc" alt="Cleveland dot plot of education type vs amount of fraud.">
 </p>
 
 <p align="center"><strong>Figure 4:</strong> <i>Insurance fraud committed based on insured’s level of education.</i></p><br>
