@@ -65,7 +65,7 @@ auto_model                       0
 auto_year                        0
 fraud_reported                   0
 ```
-Figure 1: Output of all the summed null values in each column.<br><br>
+<p align="center"><strong>Figure 1:</strong> <i>Output of all the summed null values in each column.</i></p><br>
 
 
 The column `police_report_avaliable` has missing data where each one is inputted as “?”—prior to the imputation I have converted each “?” value to NaN using Numpy’s `replace()` function.
