@@ -236,3 +236,4 @@ Let's look at the age of fraudsters from both genders.
 
 <p align="center"><strong>Figure 5:</strong> <i>Age range of customers that commit insurance fraud.</i></p><br>
 
+Women in their early forties--just like their male counterparts--commit a huge amount of insurance fraud. There's two key differences between the groups where women in their early thirties have a second peak while men peak largely in their early forties; moreover, men in their late twenties peak earlier than later on in their lives compared to women. However, both groups mellow out from these extremes in their senior years.
