@@ -180,8 +180,9 @@ ax2.set(ylim=(0, 450))
 ax2.title.set_text('Male') 
 ax2.bar(x_axis, y_axis_2)
 ```
+
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/641d7b8c-4e8c-4ba2-9657-7db064bf4e75" alt="Bar graph subplot distribution of classes for male and female customers.">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/3b31b431-3da7-4e4a-8265-b5ebd9caf36a" alt="Bar graph subplot distribution of classes for male and female customers.">
 </p>
 
 <p align="center"><strong>Figure 3:</strong> <i>Distribution of classes based on gender.</i></p><br>
@@ -227,4 +228,11 @@ matplotlib.rc('ytick', labelsize=11)
 
 The cleveland dot plot as shown in Fig. 4 reveals that customers with the education level of Juris Doctor (JD) commit the most amounts of insurance fraud while customers with masters and college degrees are on the lower end: this data does not however give an idea of why JD is the highest. 
 
+Let's look at the age of fraudsters from both genders.
+
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/ffdd3f7d-b75b-48e1-b626-1af1209c7f67" alt="Age pyramid of age vs amount of fraud including gender categorization.">
+</p>
+
+<p align="center"><strong>Figure 5:</strong> <i>Age range of customers that commit insurance fraud.</i></p><br>
 
