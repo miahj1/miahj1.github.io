@@ -271,7 +271,12 @@ With all this setup, we can now graph the plot.
 import matplotlib.pyplot as plt
 
 plt.barh(width = df1["fraud_freq"], y = df1["age"], label = "Male")
-plt.barh(width = df2["fraud_freq"], y = df2["age"], left = -df2["fraud_freq"], label = "Female", height=0.7)
+plt.barh(width = df2["fraud_freq"], y = df2["age"], left = -df2["fraud_freq"], label = "Female")
+```
+
+One of the simpliest ways to create an age pyramid is to use two horizontal bar graphs and have one face the opposite end. The first line of code creates a horizontal bar graph on the right side of the pyramid for male customers while the second line of code created a horizontal bar graph on the left side of the pyramid. This is achieved using the argument `left` which is assigned the negative argument `-df2["fraud_freq"]` causing the number line to start from negative values which isn't ideal but will be fixed later on.
+
+```python
 plt.xlim(-df2["fraud_freq"].max(), df2["fraud_freq"].max())
 plt.ylabel("Age (years)", fontsize = 13)
 plt.xlabel("Total Amount of Fraudulent Cases", fontsize = 13)
@@ -285,4 +290,4 @@ ax.set_axisbelow(True)
 ax.grid(color='gray', alpha=0.3)
 ```
 
-One of the simpliest ways to create an age pyramid is to use two horizontal bar graphs and have one face the opposite end. 
+The function `xlim` allows limiting the x-values: we take the maximum value from `df2` which is the largest max value of fraud totals. To resolve the issue with negative values appearing in the x-axis, `xticks` becomes very helpful. The `xticks` function's first argument is given `np.arange(-12, 12, 6)` which generates the number line for us e.g. `-12 -6, 0, 6, 12` and the second argument `labels` allow us to hide those pesky negative values by giving it positive values for the number line we want to see.
