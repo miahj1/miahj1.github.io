@@ -269,6 +269,7 @@ With all this setup, we can now graph the plot.
 
 ```python
 import matplotlib.pyplot as plt
+import numpy as np
 
 plt.barh(width = df1["fraud_freq"], y = df1["age"], label = "Male")
 plt.barh(width = df2["fraud_freq"], y = df2["age"], left = -df2["fraud_freq"], label = "Female")
