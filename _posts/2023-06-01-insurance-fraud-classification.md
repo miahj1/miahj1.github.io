@@ -237,3 +237,50 @@ Let's look at the age of fraudsters from both genders.
 <p align="center"><strong>Figure 5:</strong> <i>Age range of customers that commit insurance fraud.</i></p><br>
 
 Women in their early forties--just like their male counterparts--commit a huge amount of insurance fraud. There's two key differences between the groups where women in their early thirties have a second peak while men peak largely in their early forties; moreover, men in their late twenties peak earlier than later on in their lives compared to women. However, both groups mellow out from these extremes in their senior years.
+
+Now, let's look at the code for making the Fig. 5 graph.
+
+```python 
+def dataframe_gen(gender: str, ages = insurance_claims_df['age'].unique()):
+  fraud_per_age = []
+
+  for age in ages:
+    fraud_per_age.append(((insurance_claims_df['age'] == age) & 
+                          (insurance_claims_df['fraud_reported'] == 'Y') &
+                          (insurance_claims_df['insured_sex'] == gender)).sum())
+
+  df = pd.DataFrame(
+    dict(
+        age = ages,
+        fraud_freq = fraud_per_age,
+        gender = gender
+    )
+  )
+
+  return df
+
+df1 = dataframe_gen("MALE")
+df2 = dataframe_gen("FEMALE")
+```
+
+Before plotting the data, I define a function named `dataframe_gen()` which takes arguments `gender` and `ages`: the gender parameter is limited to two strings based on the data i.e. `MALE` or `FEMALE`. The `ages` argument is preloaded with code that returns all the unique ages in the `ages` column for our dataframe. The making of the pyramid graph requires having two dataframes. When the function is called with the appropriate parameter, an empty list named `fraud_per_age` is declared. A for loop is used to iterate through the `ages` list. The `fraud_per_age` list is then used to append or store values that meet the boolean expression which can be simplified as the age in the dataframe being equal to each age in our unique list of ages in `ages` and if those in the list of ages have commited insurance fraud and they are the specified `gender` we sent in earlier as an argument to the function. If all these conditions are true, append the total fraudlent cases to `fraud_per_age`. Purpose of the function is to generate a dataframe, a dataframe object is constructed using a dictionary with the names of the columns and their coressponding data. The function gracefully returns a dataframe. `df1` has all the values that correspond to `MALE` customers while `df2` has all the values that correspond to  the `FEMALE` customers. With all this setup, we can now graph the plot.
+
+```python
+import matplotlib.pyplot as plt
+
+plt.barh(width = df1["fraud_freq"], y = df1["age"], label = "Male")
+plt.barh(width = df2["fraud_freq"], y = df2["age"], left = -df2["fraud_freq"], label = "Female", height=0.7)
+plt.xlim(-df2["fraud_freq"].max(), df2["fraud_freq"].max())
+plt.ylabel("Age (years)", fontsize = 13)
+plt.xlabel("Total Amount of Fraudulent Cases", fontsize = 13)
+plt.xticks(np.arange(-12, 12, 6), labels = [12, 6, 0, 6])
+plt.text(-5.5, 62, "Female", fontsize = 13)
+plt.text(6.5, 62, "Male", fontsize = 13)
+
+ax = plt.gca()
+ax.set_frame_on(False)
+ax.set_axisbelow(True)
+ax.grid(color='gray', alpha=0.3)
+```
+
+One of the simpliest ways to create an age pyramid is to use two horizontal bar graphs and have one face the opposite end. 
