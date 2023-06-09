@@ -364,4 +364,29 @@ A pair-plot gives a good idea of the relationship between features, notice that 
 
 <p align="center"><strong>Figure 7:</strong> <i>Pair-plot of select features.</i></p><br>
 
+# Fitting the Machine Learning Model
+
+A good way to make sure things work out as planned including making the model robust is to split the data into a train and a test set. The split is performed using scikit-learn’s `train_test_split()` function. We will perform a 70/30 split; there's some discussion on which splits are the best in these scenairos 70/30 is one that is recommended. 
+
+```python
+from sklearn.model_selection import train_test_split
+
+y = combined_df['fraud_reported_Y'].to_numpy()
+X = combined_df.drop('fraud_reported_Y', axis=1).to_numpy()
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1, stratify=y)
+```
+
+The target values are set to the `y` variable, and the features are assigned to the `X` variable. They are converted to NumPy arrays so that they can be accepted by the `train_test_split()` function. Parameters set for the `train_test_split()` function make it so the test set of data is 30% while stratify preserves the proportion of the distribution of the data. Given the apparent imbalance of the data, it is necessary to use an algorithm that takes this property into account. In this case, I am considering using a weighted Standard Vector Machine (SVM) with a heuristic weighting parameter that does not require manual tweaking. The data is also fitted using the Standard Vector Classifier (SVC).
+
+```python
+from sklearn.svm import SVC
+
+svc = SVC(gamma='scale', class_weight="balanced")
+svc.fit(X_train, y_train)
+
+y_pred = svc.predict(X_test)
+```
+
+Now, all that is left is to calculate the results of the model using scikit-learn once again: the results of the code are shown in Fig. 10.
 
