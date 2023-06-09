@@ -325,4 +325,33 @@ sns.heatmap(data=correlation, annot=True, fmt ='.2g', linewidth=2)
 plt.show()
 ```
 
+## Encoding Categorical Columns and Scaling Numerical Columns using Scikit-learn’s StandardScaler
 
+Before encoding the labels, getting all the categorical columns into their own dataframe would help separate categorical and numerical columns. The `select_dtypes()` function comes to the rescue since the datatypes of the categorical columns are all of type `object` changing the include parameter to it will filter out all the categorical columns: this was performed previously to discover the unique options for each feature. We will just reuse `cat_cols`. Pandas library comes with a `get_dummies()` function which will encode the values for the categorical columns to 1’s and 0’s while also creating separate new columns for each option i.e. `insured_education_level` would split into `insured_education_level_College`, `insured_education_level_HighSchool` etc.
+
+```python
+import pandas as pd
+
+cat_cols = pd.get_dummies(cat_cols, drop_first=True)
+```
+
+Furthermore, scaling the numerical columns is an important step: if this isn’t performed, the model will be biased towards certain features—scaling makes this bias less inequitable and brings every feature down to the same level. Thankfully, scikit-learn is packaged with a scaler: the `StandardScaler()` class which with its `fit_transform()` function that takes in a dataframe will fit as well as transform the data. There are functions that perform these two operations separately.
+
+```python
+from sklearn.preprocessing import StandardScaler
+
+# Getting all the numerical columns.
+num_cols = min_df.select_dtypes(include=['int64'])
+
+# Scaling all the numerical columns
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(num_cols)
+
+scaled_num_df = pd.DataFrame(data = scaled_data, columns = num_cols.columns)
+```
+
+Maybe, there should be a function that performs scaling on numerical columns as well as encoding on categorical columns called scaling_encoder() since that isn’t the case; the two dataframes here will need to be combined using Pandas’s concat() function.
+
+```python
+combined_df = pd.concat([scaled_num_df, cat_cols], axis=1)
+```
