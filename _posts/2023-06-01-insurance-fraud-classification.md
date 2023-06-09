@@ -350,7 +350,7 @@ scaled_data = scaler.fit_transform(num_cols)
 scaled_num_df = pd.DataFrame(data = scaled_data, columns = num_cols.columns)
 ```
 
-Maybe, there should be a function that performs scaling on numerical columns as well as encoding on categorical columns called scaling_encoder() since that isn’t the case; the two dataframes here will need to be combined using Pandas’s concat() function.
+Maybe, there should be a function that performs scaling on numerical columns as well as encoding on categorical columns called `scaling_encoder()` since that isn’t the case; the two dataframes here will need to be combined using Pandas’s `concat()` function.
 
 ```python
 combined_df = pd.concat([scaled_num_df, cat_cols], axis=1)
