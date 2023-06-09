@@ -391,7 +391,7 @@ svc.fit(X_train, y_train)
 y_pred = svc.predict(X_test)
 ```
 
-Now, all that is left is to calculate the results of the model using scikit-learn once again: the results of the code are shown in Fig. 10.
+Now, all that is left is to calculate the results of the model using scikit-learn once again: the results of the code are shown in Fig. 8.
 
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -407,3 +407,6 @@ print(classification_report(y_test, y_pred))
 ```
 
 <img alt="Ouput for the code shown above." src="https://github.com/miahj1/miahj1.github.io/assets/84815985/d0fe830d-6449-4a15-a58c-8b981e3c2271">
+
+<p align="center"><strong>Figure 8:</strong> <i>Output of a training accuracy score, a testing accuracy score, a confusion matrix, and a classification report.</i></p><br>
+
