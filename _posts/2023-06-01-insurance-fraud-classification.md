@@ -462,3 +462,6 @@ print(f"y_train: {y_train.shape}, y_test: {y_test.shape}")
 </p>
 
 <p align="center"><strong>Figure 11:</strong> <i>Shape of x_train, X_test, y_train, and y_test after splitting the data.</i></p><br>
+
+Next, I will fit the resampled data onto the model using the same code previously, and the results are shown below.
+
