@@ -358,7 +358,7 @@ combined_df = pd.concat([scaled_num_df, cat_cols], axis=1)
 
 # Pair-Plotting using Seaborn
 
-A pair-plot gives a good idea of the relationship between features, notice that in Fig. 9 there is no linear separability between features, positive correlation, or negative correlation. Also, there’s no visible relationship or trend between the selection of features. I’ve limited the number of features to five: it takes a very long time for plots like this to be produced. The combined dataframe consists of 73 columns where the extra number of columns are dummy columns.
+A pair-plot gives a good idea of the relationship between features, notice that in Fig. 7 there is no linear separability between features, positive correlation, or negative correlation. Also, there’s no visible relationship or trend between the selection of features. I’ve limited the number of features to five: it takes a very long time for plots like this to be produced. The combined dataframe consists of 73 columns where the extra number of columns are dummy columns.
 
 ![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/70e81089-b31a-4176-b00d-d3f7798d9f29)
 
