@@ -292,3 +292,37 @@ ax.grid(color='gray', alpha=0.3)
 ```
 
 The function `xlim` allows limiting the x-values: we take the maximum value from `df2` which is the largest max value of fraud totals. To resolve the issue with negative values appearing in the x-axis, `xticks` becomes very helpful. The `xticks` function's first argument is given `np.arange(-12, 12, 6)` which generates the number line for us e.g. `-12 -6, 0, 6, 12` and the second argument `labels` allow us to hide those pesky negative values by giving it positive values for the number line we want to see.
+
+## Feature Selection using Seaborn
+
+I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 6.
+
+![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/9c8db755-7d51-4de8-91e2-4fda094d3748)
+
+<p align="center"><strong>Figure 6:</strong> <i>Heat map of features and their correlation.</i></p><br>
+
+There are a few highly correlated features such as `age` and `months_as_customer`, `total_claim_amount` and `vehicle_claim`, `total_claim_amount` and `property_claim`, and `total_claim_amount` and `injury_claim`. I will drop the column `total_claim_amount` since it is the addition of all the other claim amounts, and I will also drop `age`. An issue with having highly correlated features is that they may become a problem for the linear model I plan to use; however, the dropping of highly correlated features is not as cut and dry. I will drop features that I believe to be useless—or too complex to deal with as of now—in the model such as `auto_make`, `auto_model`, `incident_city`, `incident_location`, `policy_state`, `policy_bind_date`, `incident_date`, `incident_state`, `policy_number`, and `insured_zip`.
+
+```python
+drop = ['auto_make', 'auto_model', 'incident_city', 'incident_location', 
+        'auto_year', 'total_claim_amount', 'policy_state', 'age', 
+        'policy_bind_date', 'incident_date',
+        'incident_state', 'policy_number', 'insured_zip']
+min_df = insurance_claims_df.copy()
+min_df.drop(drop, inplace=True, axis=1)
+```
+
+
+Let's look at the implementation of the graph, the parameter `fmt=’.2g’` will move the decimal to two significant figures. 
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize = (18, 12))
+correlation = insurance_claims_df.corr()
+sns.heatmap(data=correlation, annot=True, fmt ='.2g', linewidth=2)
+plt.show()
+```
+
+
