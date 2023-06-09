@@ -410,3 +410,13 @@ print(classification_report(y_test, y_pred))
 
 <p align="center"><strong>Figure 8:</strong> <i>Output of a training accuracy score, a testing accuracy score, a confusion matrix, and a classification report.</i></p><br>
 
+It is shown that the classification training accuracy is 94%: the test accuracy however is a lowly 79%. Metrics such as these are not particularly important when the data is imbalanced hence the usage of a confusion matrix and classification report. I have graphed the confusion matrix to get a clearer picture of what is going on. 
+
+![conf_matrix](https://github.com/miahj1/miahj1.github.io/assets/84815985/01f8dcf2-0ad1-4814-ba9c-89a1899f4b2d)
+
+<p align="center"><strong>Figure 9:</strong> <i>Confusion matrix of the model, plotted using matplotlib and mlxtend.</i></p><br>
+
+The model correctly predicted the positive class `no fraud` 191 times as seen from the True Positive (TP) value: furthermore, the model correctly predicted the negative class `fraud` 47 times. When we look at the remaining diagonal values, there are 35 occasions where the model predicted no fraud incorrectly and 27 occasions or false positives where the model predicted fraudulent activity incorrectly. 
+
+If we take a gander at the classification report, the first class has good results in all the categories. The second class tells a different story with abysmal scores—even though the model is weighted it remains apparent that there is just not enough data for the second class, to remedy this problem resampling the dataset would be the next step.
+
