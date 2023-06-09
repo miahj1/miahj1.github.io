@@ -167,7 +167,7 @@ fig, (ax1, ax2) = plt.subplots(1, 2)
 plt.suptitle("Type of Fraud", y = -0, fontsize = 13.0)
 
 ax1.set_frame_on(False)
-ax1.grid(axis = 'y', alpha = 0.5)
+ax1.grid(axis = 'y', alpha = 0.3)
 ax1.set(ylim=(0, 450))
 ax1.set_ylabel('Total Occurences of Fraud', fontsize = 13.0) 
 ax1.title.set_text('Female') 
@@ -175,10 +175,13 @@ ax1.bar(x_axis, y_axis_1)
 
 ax2.set_frame_on(False)
 ax2.set_yticklabels([])
-ax2.grid(axis = 'y', alpha = 0.5)
+ax2.grid(axis = 'y', alpha = 0.3)
 ax2.set(ylim=(0, 450))
 ax2.title.set_text('Male') 
 ax2.bar(x_axis, y_axis_2)
+
+ax2.set_axisbelow(True) # Hides the x-axis grid lines.
+ax1.set_axisbelow(True) # Hides the x-axis grid lines.
 ```
 
 <p align="center">
