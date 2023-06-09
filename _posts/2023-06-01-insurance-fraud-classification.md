@@ -369,7 +369,7 @@ A pair-plot gives a good idea of the relationship between features, notice that 
 
 # Fitting the Machine Learning Model
 
-A good way to make sure things work out as planned including making the model robust is to split the data into a train and a test set. The split is performed using scikit-learn’s `train_test_split()` function. We will perform a 70/30 split; there's some discussion on which splits are the best in these scenairos 70/30 is one that is recommended. 
+A good way to make sure things work out as planned including making the model robust is to split the data into a train and a test set. The split is performed using scikit-learn’s `train_test_split()` function. We will perform a 70/30 split; there's some discussion on which splits are the best in these scenairos 70/30 is one that is recommended: clearly, most of the data shouldn't be spenting on testing the model when training it with most of the data is important.
 
 ```python
 from sklearn.model_selection import train_test_split
