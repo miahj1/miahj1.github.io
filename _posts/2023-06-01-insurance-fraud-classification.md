@@ -428,3 +428,37 @@ The model correctly predicted the positive class `no fraud` 191 times as seen fr
 
 If we take a gander at the classification report in Fig. 8, the first class has good results in all the categories. The second class tells a different story with abysmal scores—even though the model is weighted it remains apparent that there is just not enough data for the second class, to remedy this problem resampling the dataset would be the next step.
 
+## Resampling using ADASYN
+
+The reasoning behind why I chose such a sampling method is because someone else who also did a similar topic but for credit card fraud had shown me the value of such a resampling method with their impressive results. ADASYN instead of copying the same minority data generates synthetic data for examples that are harder to learn which has two advantages: reduction of bias presented by class imbalance and the shifting of the classification boundary to consider difficult examples. Let’s resample the data using the imbalanced learning library.
+
+```python
+from imblearn.over_sampling import ADASYN
+
+ada = ADASYN(random_state=42)
+X_res, y_res = ada.fit_resample(X, y)
+print(f"X_res: {X_res.shape}, y_res: {y_res.shape}")
+```
+
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/3fb51a5b-5ebf-4ce4-ad44-93cbf1a45325">
+</p>
+
+<p align="center"><strong>Figure 10:</strong> <i>Shape of x_res and y_res--showing that they are now balanced.</i></p><br>
+
+ADASYN successfully balanced the data set as shown in Fig. 10 which means there is no need to use a weighted SVM instead I will use the normal SVM. I will once again split the dataset: this time without any specific parameters: I seem to run into certain odd errors if I use any parameters. The shape of the split data can be viewed in Fig. 11.
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X_res, y_res)
+
+print(f"X_train: {X_train.shape}, X_test: {X_test.shape}")
+print(f"y_train: {y_train.shape}, y_test: {y_test.shape}")
+```
+
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/2073e2fb-b1fd-4223-8156-f168d6caa994">
+</p>
+
+<p align="center"><strong>Figure 11:</strong> <i>Shape of x_train, X_test, y_train, and y_test after splitting the data.</i></p><br>
