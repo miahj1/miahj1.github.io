@@ -300,7 +300,9 @@ The function `xlim` allows limiting the x-values: we take the maximum value from
 
 I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 6.
 
-![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/9c8db755-7d51-4de8-91e2-4fda094d3748)
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/9c8db755-7d51-4de8-91e2-4fda094d3748">
+</p>
 
 <p align="center"><strong>Figure 6:</strong> <i>Heat map of features and their correlation.</i></p><br>
 
@@ -363,7 +365,9 @@ combined_df = pd.concat([scaled_num_df, cat_cols], axis=1)
 
 A pair-plot gives a good idea of the relationship between features, notice that in Fig. 7 there is no linear separability between features, positive correlation, or negative correlation. Also, there’s no visible relationship or trend between the selection of features. I’ve limited the number of features to five: it takes a very long time for plots like this to be produced. The combined dataframe consists of 73 columns where the extra number of columns are dummy columns.
 
-![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/70e81089-b31a-4176-b00d-d3f7798d9f29)
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/70e81089-b31a-4176-b00d-d3f7798d9f29">
+</p>
 
 <p align="center"><strong>Figure 7:</strong> <i>Pair-plot of select features.</i></p><br>
 
@@ -406,17 +410,21 @@ print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 ```
 
-<img alt="Ouput for the code shown above." src="https://github.com/miahj1/miahj1.github.io/assets/84815985/d0fe830d-6449-4a15-a58c-8b981e3c2271">
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/d0fe830d-6449-4a15-a58c-8b981e3c2271" alt="Ouput for the code shown above.">
+</p>
 
 <p align="center"><strong>Figure 8:</strong> <i>Output of a training accuracy score, a testing accuracy score, a confusion matrix, and a classification report.</i></p><br>
 
 It is shown that the classification training accuracy is 94%: the test accuracy however is a lowly 79%. Metrics such as these are not particularly important when the data is imbalanced hence the usage of a confusion matrix and classification report. I have graphed the confusion matrix to get a clearer picture of what is going on. 
 
-![conf_matrix](https://github.com/miahj1/miahj1.github.io/assets/84815985/01f8dcf2-0ad1-4814-ba9c-89a1899f4b2d)
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/01f8dcf2-0ad1-4814-ba9c-89a1899f4b2d" alt="Ouput for the code shown above.">
+</p>
 
 <p align="center"><strong>Figure 9:</strong> <i>Confusion matrix of the model, plotted using matplotlib and mlxtend.</i></p><br>
 
-The model correctly predicted the positive class `no fraud` 191 times as seen from the True Positive (TP) value: furthermore, the model correctly predicted the negative class `fraud` 47 times. When we look at the remaining diagonal values, there are 35 occasions where the model predicted no fraud incorrectly and 27 occasions or false positives where the model predicted fraudulent activity incorrectly. 
+The model correctly predicted the positive class `no fraud` 191 times as seen from the True Positive (TP) value: furthermore, the model correctly predicted the negative class `fraud` 47 times. When we look at the remaining diagonal values, there are 35 occasions where the model predicted `no fraud` incorrectly and 27 occasions or false positives where the model predicted fraudulent activity incorrectly. 
 
-If we take a gander at the classification report, the first class has good results in all the categories. The second class tells a different story with abysmal scores—even though the model is weighted it remains apparent that there is just not enough data for the second class, to remedy this problem resampling the dataset would be the next step.
+If we take a gander at the classification report in Fig. 8, the first class has good results in all the categories. The second class tells a different story with abysmal scores—even though the model is weighted it remains apparent that there is just not enough data for the second class, to remedy this problem resampling the dataset would be the next step.
 
