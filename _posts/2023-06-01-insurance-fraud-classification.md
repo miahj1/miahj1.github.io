@@ -152,7 +152,7 @@ print(f"Fraudulent Females: {((insurance_claims_df['fraud_reported'] == 'Y') & (
 Let's now graph the results, the `x_axis` variable is assigned the two categories for fraud classification. `y_axis_1` is assigned the values for the female customers while
 `y_axis_2` is assigned the values for the male customers. The code `fig, (ax1, ax2) = plt.subplots(1, 2)` is used to establish two graphs. The function `suptitle()` is 
 normally used for titling the shared plots; however, I want to title the shared x-axis so I set the `y` argument value to `-0` effectively flipping it over to the other end.
-The other styling changes to the graphs are self-explanatory and won't be covered.
+The other styling changes to the graphs are self-explanatory except for `set_axisbelow(True)` which place the grid lines behind the bars instead of infront of them.
 
 ```python
 import matplotlib.pyplot as plt
@@ -180,8 +180,8 @@ ax2.set(ylim=(0, 450))
 ax2.title.set_text('Male') 
 ax2.bar(x_axis, y_axis_2)
 
-ax2.set_axisbelow(True) # Hides the x-axis grid lines.
-ax1.set_axisbelow(True) # Hides the x-axis grid lines.
+ax2.set_axisbelow(True)
+ax1.set_axisbelow(True)
 ```
 
 <p align="center">
