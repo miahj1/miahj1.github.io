@@ -465,3 +465,10 @@ print(f"y_train: {y_train.shape}, y_test: {y_test.shape}")
 
 Next, I will fit the resampled data onto the model using the same code previously, and the results are shown below.
 
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/0e55173e-cca5-49ce-9562-eeb0fe7ff403">
+</p>
+
+<p align="center"><strong>Figure 12:</strong> <i>Metrics for the model.</i></p><br>
+
+The model performed better in the second class increasing the values of the categories by a huge portion: the same can be said of the test accuracy that has gone from 79% to 90%.
