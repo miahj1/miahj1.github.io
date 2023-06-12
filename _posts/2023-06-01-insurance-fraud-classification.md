@@ -296,15 +296,58 @@ ax.grid(color='gray', alpha=0.3)
 
 The function `xlim` allows limiting the x-values: we take the maximum value from `df2` which is the largest max value of fraud totals. To resolve the issue with negative values appearing in the x-axis, `xticks` becomes very helpful. The `xticks` function's first argument is given `np.arange(-12, 12, 6)` which generates the number line for us e.g. `-12 -6, 0, 6, 12` and the second argument `labels` allow us to hide those pesky negative values by giving it positive values for the number line we want to see.
 
+The next question I would ask to the data is where do most of these incidents happen? Statebins graph in Fig. 6 shows that New York (NY) and South Carolina (SC) have the highest percentage of incidents: I have not been to SC, but NY is right around the corner from me. For NY it makes sense, the state is traffic heavy and congested with a very narrow landscape making it a difficult venue for drivers to maneuver in. States such as Ohio (OH) and Pennsylvania (PA) have the least percentage of incidents. You’ll notice that the dataset only has data for seven states e.g. SC, VA, NY, OH, WV, NC, and PA. 
+
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/10c8892c-b28c-4021-851c-ade17a39c6ff" alt="Statebins graph for incident percentage in seven US states.">
+</p>
+
+<p align="center"><strong>Figure 6:</strong> <i>Incident percentage based on state where incident occured.</i></p><br>
+
+There's a few more notable things happening with this graph: the graph was not made in Python. Python doesn't have a library for making statebins: it does have something akin to it called hexbins which
+is a customization created by a developer. I have opted out to use R instead to make the graph. There was some trouble getting the font I used in previous visualizations to work in R, not being able
+to resolve this issue: the default font will suffice.
+
+Before we being, we'll need to install the statebins library. 
+
+```R
+install.packages("statebins")
+```
+
+After installation, the variable `states` is declared and assigned values for the states with data and states without data. Since the `statebins`
+library doesn't provide a way to do this, listing every state and its value is needed. To simplify this laborious task, I used 
+chatgpt to generate the values for the remaining states and zeroes that would correspond to each one. However, I had to manually remove some
+extra zeroes added by chatpgt which would prevent the code from working.
+
+```R
+library(statebins)
+
+states <- c("SC", "VA", "NY", "OH", "WV", "NC", "PA", "AK", "AL", "AR", "AZ", 
+            "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", 
+            "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", 
+            "ND", "NE", "NH", "NJ", "NM", "NV", "OK", "OR", "RI", "SC", "SD", 
+            "TN", "TX", "UT", "VT", "WA", "WI", "WY")
+pct_incidents <- c(24.8, 11.0, 26.2, 2.3, 21.7, 11.0, 3.0, 0, 0, 0, 0, 0, 0, 0, 
+                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+incident_state_data <- data.frame(states, pct_incidents)
+
+statebins(state_data = incident_state_data, state_col = "states",
+          value_col = "pct_incidents", font_size = 3, palette = "Blues", 
+          dark_label = "black", name = "Percentage of Incidents",
+          light_label = "white", direction = 1) + 
+          theme_statebins(legend_position="top")
+```
+
 ## Feature Selection using Seaborn
 
-I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 6.
+I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 7.
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/9c8db755-7d51-4de8-91e2-4fda094d3748">
 </p>
 
-<p align="center"><strong>Figure 6:</strong> <i>Heat map of features and their correlation.</i></p><br>
+<p align="center"><strong>Figure 7:</strong> <i>Heat map of features and their correlation.</i></p><br>
 
 There are a few highly correlated features such as `age` and `months_as_customer`, `total_claim_amount` and `vehicle_claim`, `total_claim_amount` and `property_claim`, and `total_claim_amount` and `injury_claim`. I will drop the column `total_claim_amount` since it is the addition of all the other claim amounts, and I will also drop `age`. An issue with having highly correlated features is that they may become a problem for the linear model I plan to use; however, the dropping of highly correlated features is not as cut and dry. I will drop features that I believe to be useless—or too complex to deal with as of now—in the model such as `auto_make`, `auto_model`, `incident_city`, `incident_location`, `policy_state`, `policy_bind_date`, `incident_date`, `incident_state`, `policy_number`, and `insured_zip`.
 
