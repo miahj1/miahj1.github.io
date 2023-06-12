@@ -346,7 +346,7 @@ If anyone is curious about the prompts I used for chatgpt, I have included them 
 I took all the unique values out of the `incident_state` column and then used boolean logic via a for loop to print a sum of all the incidents
 for each state.
 
-🙆 Prompt
+Prompt
 ```
 Add all the numbers from this data:
 "SC: 248
@@ -359,7 +359,7 @@ PA: 30
 "
 ```
 
-🤖 Chatgpt
+Chatgpt
 ```
 To add all the numbers from the given data, simply sum up the values provided:
 
@@ -380,13 +380,13 @@ for state in incident_states:
 
 Let's now use chatgpt to make the percentages values needed for the visualization.
 
-🙆 Prompt
+Prompt
 ```
 Now, repost the data but divide each number by 1000 and then format them in percents
 so the data would look like this
 State:Percent%
 ```
-🤖 Chatgpt
+Chatgpt
 ```
 Sure! Here's the data with each number divided by 1000 and formatted as percentages:
 
@@ -401,13 +401,13 @@ PA: 3.0%
 
 The output format isn't very useful right now, so I had chatgpt format it for me.
 
-🙆 Prompt
+Prompt
 ```
 Give me all the percents in a line separated by a comma and space so
 %, % . . .
 ```
 
-🤖 Chatgpt
+Chatgpt
 ```
 Certainly! Here are all the percents separated by a comma and space:
 
@@ -416,12 +416,12 @@ Certainly! Here are all the percents separated by a comma and space:
 
 It's still not the format we want, do better chatgpt!
 
-🙆 Prompt
+Prompt
 ```
 Send it again but without the percentage symbol
 ```
 
-🤖 Chatgpt
+Chatgpt
 ```
 Apologies for the confusion. Here are all the percents without the percentage symbol, separated by a comma and space:
 
@@ -430,12 +430,12 @@ Apologies for the confusion. Here are all the percents without the percentage sy
 
 We also have to check if what chatgpt gives us is correct. Let's have it add up all the percentages to see if the total is 100%.
 
-🙆 Prompt
+Prompt
 ```
 Add all the percentages.
 ```
 
-🤖 Chatgpt
+Chatgpt
 ```
 To add all the percentages, we need to convert them back to decimal form, add them up, and then convert the sum back to a percentage.
 
