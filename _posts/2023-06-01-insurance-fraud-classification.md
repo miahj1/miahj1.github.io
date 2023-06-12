@@ -316,8 +316,9 @@ install.packages("statebins")
 
 After installation, the variable `states` is declared and assigned values for the states with data and states without data. Since the `statebins`
 library doesn't provide a way to do this, listing every state and its value is needed. To simplify this laborious task, I used 
-chatgpt to generate the values for the remaining states and zeroes that would correspond to each one. However, I had to manually remove some
-extra zeroes added by chatpgt which would prevent the code from working.
+chatgpt to generate the name of all the other US states and then I used the `replicate` function to pad enough zeroes for each of those states. 
+Furthermore, I concatenated the two vectors `pct_incidents_w_data` and `zero_padding` using the `c()` function. A part of me got really lazy and used chatgpt to 
+calculate the percentages even though this could have been done with code.
 
 ```R
 library(statebins)
@@ -327,9 +328,11 @@ states <- c("SC", "VA", "NY", "OH", "WV", "NC", "PA", "AK", "AL", "AR", "AZ",
             "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", 
             "ND", "NE", "NH", "NJ", "NM", "NV", "OK", "OR", "RI", "SC", "SD", 
             "TN", "TX", "UT", "VT", "WA", "WI", "WY")
-pct_incidents <- c(24.8, 11.0, 26.2, 2.3, 21.7, 11.0, 3.0, 0, 0, 0, 0, 0, 0, 0, 
-                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+pct_incidents_w_data <- c(24.8, 11.0, 26.2, 2.3, 21.7, 11.0, 3.0)
+zero_padding <- replicate(length(states) - length(pct_incidents_w_data), 0)
+pct_incidents <- c(pct_incidents_w_data, zero_padding)
+
 incident_state_data <- data.frame(states, pct_incidents)
 
 statebins(state_data = incident_state_data, state_col = "states",
@@ -338,6 +341,94 @@ statebins(state_data = incident_state_data, state_col = "states",
           light_label = "white", direction = 1) + 
           theme_statebins(legend_position="top")
 ```
+
+If anyone is curious about the prompts I used for chatgpt, I have included them below. The first prompt's data comes from Python where
+I took all the unique values out of the `incident_state` column and then used boolean logic via a for loop to print a sum of all the incidents
+for each state.
+
+🙆 Prompt
+```
+Add all the numbers from this data:
+"SC: 248
+VA: 110
+NY: 262
+OH: 23
+WV: 217
+NC: 110
+PA: 30
+"
+```
+
+🤖 Chatgpt
+```
+To add all the numbers from the given data, simply sum up the values provided:
+
+248 + 110 + 262 + 23 + 217 + 110 + 30 = 1000
+
+The sum of all the numbers is 1000.
+```
+
+You can see the python code for the prompt's data as mentioned before below.
+
+```py
+# States where incidents occured.
+incident_states = insurance_claims_df['incident_state'].unique()
+
+for state in incident_states:
+  print(f"{state}: {((insurance_claims_df['incident_state'] == state)).sum()}")
+```
+
+Let's now use chatgpt to make the percentages values needed for the visualization.
+
+🙆 Prompt
+```
+Now, repost the data but divide each number by 1000 and then format them in percents
+so the data would look like this
+State:Percent%
+```
+🤖 Chatgpt
+```
+Sure! Here's the data with each number divided by 1000 and formatted as percentages:
+
+SC: 24.8%
+VA: 11.0%
+NY: 26.2%
+OH: 2.3%
+WV: 21.7%
+NC: 11.0%
+PA: 3.0%
+```
+
+We also have to check if what chatgpt gives us is correct. Let's have it add up all the percentages to see if the total is 100%.
+
+🙆 Prompt
+```
+Add all the percentages.
+```
+
+🤖 Chatgpt
+```
+To add all the percentages, we need to convert them back to decimal form, add them up, and then convert the sum back to a percentage.
+
+24.8% + 11.0% + 26.2% + 2.3% + 21.7% + 11.0% + 3.0%
+
+Converting to decimal form:
+
+0.248 + 0.110 + 0.262 + 0.023 + 0.217 + 0.110 + 0.030
+
+Summing up the decimals:
+
+0.248 + 0.110 + 0.262 + 0.023 + 0.217 + 0.110 + 0.030 = 1.000
+
+Converting back to a percentage:
+
+1.000 * 100% = 100%
+
+The sum of all the percentages is 100%.
+```
+
+It looks like everything is done correctly; we can thank chatgpt for being able to check itself--at times it does this incorrectly. 
+Just in case, I have double checked all its output.
 
 ## Feature Selection using Seaborn
 
