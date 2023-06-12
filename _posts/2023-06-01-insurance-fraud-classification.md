@@ -310,7 +310,7 @@ to resolve this issue: the default font will suffice.
 
 Before we being, we'll need to install the statebins library. 
 
-```R
+```python
 install.packages("statebins")
 ```
 
@@ -320,7 +320,7 @@ chatgpt to generate the name of all the other US states and then I used the `rep
 Furthermore, I concatenated the two vectors `pct_incidents_w_data` and `zero_padding` using the `c()` function. A part of me got really lazy and used chatgpt to 
 calculate the percentages even though this could have been done with code.
 
-```R
+```python
 library(statebins)
 
 states <- c("SC", "VA", "NY", "OH", "WV", "NC", "PA", "AK", "AL", "AR", "AZ", 
