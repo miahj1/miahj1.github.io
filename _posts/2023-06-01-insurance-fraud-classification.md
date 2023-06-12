@@ -299,7 +299,7 @@ The function `xlim` allows limiting the x-values: we take the maximum value from
 The next question I would ask to the data is where do most of these incidents happen? Statebins graph in Fig. 6 shows that New York (NY) and South Carolina (SC) have the highest percentage of incidents: I have not been to SC, but NY is right around the corner from me. For NY it makes sense, the state is traffic heavy and congested with a very narrow landscape making it a difficult venue for drivers to maneuver in. States such as Ohio (OH) and Pennsylvania (PA) have the least percentage of incidents. You’ll notice that the dataset only has data for seven states e.g. SC, VA, NY, OH, WV, NC, and PA. 
 
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/10c8892c-b28c-4021-851c-ade17a39c6ff" alt="Statebins graph for incident percentage in seven US states.">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/fea72284-d9fd-43fc-bd45-c010d20dfefd" alt="Statebins graph for incident percentage in seven US states.">
 </p>
 
 <p align="center"><strong>Figure 6:</strong> <i>Incident percentage based on state where incident occured.</i></p><br>
