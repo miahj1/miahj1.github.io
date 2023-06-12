@@ -342,6 +342,32 @@ statebins(state_data = incident_state_data, state_col = "states",
           theme_statebins(legend_position="top")
 ```
 
+If anyone is curious about the prompts I used for chatgpt, I have included them below. The first prompt's data comes from Python where
+I took all the unique values out of the `incident_state` column and then used boolean logic via a for loop to print a sum of all the incidents
+for each state.
+
+🧑 Prompt
+```
+Add all the numbers from this data:
+"SC: 248
+VA: 110
+NY: 262
+OH: 23
+WV: 217
+NC: 110
+PA: 30
+"
+```
+
+🤖 Chatgpt
+```
+To add all the numbers from the given data, simply sum up the values provided:
+
+248 + 110 + 262 + 23 + 217 + 110 + 30 = 1000
+
+The sum of all the numbers is 1000.
+```
+
 ## Feature Selection using Seaborn
 
 I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 7.
