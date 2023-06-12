@@ -399,6 +399,35 @@ NC: 11.0%
 PA: 3.0%
 ```
 
+The output format isn't very useful right now, so I had chatgpt format it for me.
+
+🙆 Prompt
+```
+Give me all the percents in a line separated by a comma and space so
+%, % . . .
+```
+
+🤖 Chatgpt
+```
+Certainly! Here are all the percents separated by a comma and space:
+
+24.8%, 11.0%, 26.2%, 2.3%, 21.7%, 11.0%, 3.0%
+```
+
+It's still not the format we want, do better chatgpt!
+
+🙆 Prompt
+```
+Send it again but without the percentage symbol
+```
+
+🤖 Chatgpt
+```
+Apologies for the confusion. Here are all the percents without the percentage symbol, separated by a comma and space:
+
+24.8, 11.0, 26.2, 2.3, 21.7, 11.0, 3.0
+```
+
 We also have to check if what chatgpt gives us is correct. Let's have it add up all the percentages to see if the total is 100%.
 
 🙆 Prompt
