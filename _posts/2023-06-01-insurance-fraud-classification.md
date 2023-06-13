@@ -7,7 +7,7 @@
   * [Visualizing the Dataset in Python](#visualizing-the-dataset-in-python)
   * [Feature Selection using Seaborn](#feature-selection-using-seaborn)
   * [Encoding Categorical Columns and Scaling Numerical Columns using Scikit-learns StandardScaler](#encoding-categorical-columns-and-scaling-numerical-columns-using-scikit-learns-standardscaler)
-- [Pair-Plotting using Seaborn](#pair-plotting-using-seaborn)
+  * [Pair-Plotting using Seaborn](#pair-plotting-using-seaborn)
 - [Fitting the Machine Learning Model](#fitting-the-machine-learning-model)
   * [Resampling using ADASYN](#resampling-using-adasyn)
   * [Tuning SVM Hyperparameters using GridSearchCV](#tuning-svm-hyperparameters-using-gridsearchcv)
@@ -466,7 +466,7 @@ Maybe, there should be a function that performs scaling on numerical columns as 
 combined_df = pd.concat([scaled_num_df, cat_cols], axis=1)
 ```
 
-# Pair-Plotting using Seaborn
+## Pair-Plotting using Seaborn
 
 A pair-plot gives a good idea of the relationship between features, notice that in Fig. 9 there is no linear separability between features, positive correlation, or negative correlation. Also, there’s no visible relationship or trend between the selection of features. I’ve limited the number of features to five: it takes a very long time for plots like this to be produced. The combined dataframe consists of 73 columns where the extra number of columns are dummy columns.
 
