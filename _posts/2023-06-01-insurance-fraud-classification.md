@@ -622,7 +622,6 @@ The algorithm settles on a C value of `10` and a gamma value of `0.1` for our SV
 The precision score is much better than what the model achieved in the two previous iterations with a 92% certainty for predicting insurance fraud. A summary table of all three previous results are shown in Table 2.
 
 <p align="center"><strong>Table 2:</strong> <i>Summary of metrics for all three model variants.</i></p><br>
-
 |     Model           |     Data                    |     Class      |     Precision        |     Recall           |     F1-Score         |     Accuracy    |           TP   FN       <br>FP   TN    |
 |---------------------|-----------------------------|----------------|----------------------|----------------------|----------------------|-----------------|----------------------------------------|
 |     Weighted SVM    |     Imbalanced              |     0 <br>1    |     0.88 <br>0.57    |     0.85 <br>0.64    |     0.86 <br>0.60    |       79%       |     191 35     <br>27  47              |
