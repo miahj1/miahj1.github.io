@@ -344,6 +344,43 @@ statebins(state_data = incident_state_data, state_col = "states",
 
 If anyone is curious about the prompts I used for chatgpt, I have included them in this gist: [statebins_chatgpt.md](https://gist.github.com/miahj1/1ac99b10dae956acdd5616bb53d08921). 
 
+Another metric we can look at is the amount of incidents per month, the only year avaliable in the data is `2015` and up to `March` of that year. Let's take a look
+at Fig. 7.
+
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/84a3a983-9ea0-4937-95da-3309bac122b3" alt="Line graph of total incidents per month.">
+</p>
+
+<p align="center"><strong>Figure 7:</strong> <i>Incident totals based on the month of the year.</i></p><br>
+
+The highest amount of incidents peaked in January of 2015 and started to dip from there until reaching a historical low on March. Now,
+let's take a look at the code for the graph.
+
+```python
+from collections import defaultdict
+import matplotlib.pyplot as plt
+
+incident_dates = insurance_claims_df['incident_date']
+
+counter = defaultdict(int)
+for incident_date in incident_dates:
+  month = incident_date.split("-")[1]
+
+  if month == "01":
+    month = "Jan"
+  elif month == "02": 
+    month = "Feb"
+  elif month == "03":
+    month = "Mar"
+
+  counter[month] += 1
+
+months, incident_freq = list(counter.keys()), list(counter.values())
+plt.plot(months, incident_freq)
+plt.xlabel("Months", fontsize = 13.0)
+plt.ylabel("Total Number of Incidents", fontsize = 13.0)
+```
+
 ## Feature Selection using Seaborn
 
 I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 7.
