@@ -308,7 +308,7 @@ There's a few more notable things happening with this graph: the graph was not m
 is a customization created by a developer. I have opted out to use R instead to make the graph. There was some trouble getting the font I used in previous visualizations to work in R, not being able
 to resolve this issue: the default font will suffice.
 
-Before we being, we'll need to install the statebins library. 
+Before we can go over the code, we'll need to install the `statebins` library. 
 
 ```python
 install.packages("statebins")
