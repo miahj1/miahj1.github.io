@@ -1,11 +1,26 @@
 # Insurance Fraud Data Analysis and Classification
 
-## Introduction
+##### Table of Contents  
+- [Introduction](#introduction)
+- [Preprocessing and Investigation](#preprocessing-and-investigation)
+  * [Auto-Insurance Domain Knowledge](#auto-insurance-domain-knowledge)
+  * [Visualizing the Dataset in Python](#visualizing-the-dataset-in-python)
+  * [Feature Selection using Seaborn](#feature-selection-using-seaborn)
+  * [Encoding Categorical Columns and Scaling Numerical Columns using Scikit-learns StandardScaler](#encoding-categorical-columns-and-scaling-numerical-columns-using-scikit-learns-standardscaler)
+- [Pair-Plotting using Seaborn](#pair-plotting-using-seaborn)
+- [Fitting the Machine Learning Model](#fitting-the-machine-learning-model)
+  * [Resampling using ADASYN](#resampling-using-adasyn)
+  * [Tuning SVM Hyperparameters using GridSearchCV](#tuning-svm-hyperparameters-using-gridsearchcv)
+- [Conclusion](#conclusion)
+- [References](#references)
+
+
+# Introduction
 There are many other Kaggle projects that have investigated insurance fraud using the dataset mentioned later, but they are severely lacking. The results provided by the authors are very poor and at times are the worst when it comes to fraud classification. Moreover, the conclusions are non-existent: [9, 10]. There’s no effort towards understanding the domain knowledge of the insurance fraud dataset: they just take a model and apply it to the data—sometimes they will use ten or more models a la [10], but how can they use a model without understanding how the model works. They also use visualization techniques that are frowned upon without a rigours understanding of why each decision is made in the graph or what they want to portray in that graph: this is a common ailment in most kaggle notebooks I've seen. There is a very bare minimum explanation of why the authors in the Kaggle notebooks choose to do things the way they do. 
 
 My project hopes to address these issues: I will explore a singular Standard Vector Machine (SVM) model. I will elucidate on results, conclusions, and model parameters. I wil use visualizations that are readable, clean, and clearly state their reason for existing. The goal for this project is to have a well-written deeply explored analysis of the data with a robust discussion of metrics and a working model.
 
-## Preprocessing and Investigation
+# Preprocessing and Investigation
 
 The dataset used for the analysis is from Kaggle, Auto Insurance Claims Data ([bit.ly/3JwvwTk](https://bit.ly/3JwvwTk)). It is not a “perfect” dataset as there is no description of what each column means; currently, the dataset consists of 40 columns and 1,000 rows. Tools I will use are popular modules from Python such as pandas, numpy, seaborn, scikit-learn, matplotlib, mlextend, and imbalanced-learning. The code for the project is available in my github repository, ([bit.ly/43WUcM1](https://bit.ly/43WUcM1)).
 
@@ -420,7 +435,7 @@ sns.heatmap(data=correlation, annot=True, fmt ='.2g', linewidth=2)
 plt.show()
 ```
 
-## Encoding Categorical Columns and Scaling Numerical Columns using Scikit-learn’s StandardScaler
+## Encoding Categorical Columns and Scaling Numerical Columns using Scikit-learns StandardScaler
 
 Before encoding the labels, getting all the categorical columns into their own dataframe would help separate categorical and numerical columns. The `select_dtypes()` function comes to the rescue since the datatypes of the categorical columns are all of type `object` changing the include parameter to it will filter out all the categorical columns: this was performed previously to discover the unique options for each feature. We will just reuse `cat_cols`. Pandas library comes with a `get_dummies()` function which will encode the values for the categorical columns to 1’s and 0’s while also creating separate new columns for each option i.e. `insured_education_level` would split into `insured_education_level_College`, `insured_education_level_HighSchool` etc.
 
@@ -632,11 +647,11 @@ The precision score is much better than what the model achieved in the two previ
 
 Resampling and tuning the hyperparameters worked well to increase the metrics for every iteration.
 
-## Conclusion
+# Conclusion
 
 The final SVM model after resampling using ADASYN and then tuning its hyperparameters using the brute force approach of GridSearchCV gave exceptional scores across the board for precision, recall, f1-score, and accuracy. The model achieved an accuracy score of 94% compared to the previous two models. The 97% recall score for Class 1 shows that the model is correctly identifying most of the fraudulent transactions: the F1-score of 94% suggest that the model is achieving a good balance between precision and recall. However, the rate of false positives values now stands at a value of six. A common issue with fraud classification is the difficulty or challenge of reducing false positives which leaves open the opportunity to try other models; nonetheless, that opportunity was partially explored in this project. In the notebook, I’ve tried other models such as Naïve Bayes and Decision Tree—perhaps at a later more opportune time those two avenues can be considered fully. A consideration such as that would require an understanding of the specific needs and requirements of a business or organization that may use it. Alas, the project has come to a close--thank you for taking the time to follow me along this journey.
 
-## References
+# References
 1.  Kagan, J. (2022, December 7). *Combined single limits: Definition,
     example, benefits, vs. split*. Investopedia. Retrieved March 17,
     2023, from
