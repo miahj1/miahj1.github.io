@@ -640,7 +640,7 @@ The final SVM model after resampling using ADASYN and then tuning its hyperparam
 1.  Kagan, J. (2022, December 7). *Combined single limits: Definition,
     example, benefits, vs. split*. Investopedia. Retrieved March 17,
     2023, from
-    https://www.investopedia.com/terms/c/combined-single-limits.asp#:\~:text=Combined%20single%20limits%20are%20a,property%20damage%20in%20an%20incident.
+    https://www.investopedia.com/terms/c/combined-single-limits.asp
 
 2.  Person. (2022, March 30). *What is an umbrella limit in insurance?*
     WalletHub. Retrieved March 17, 2023, from
@@ -652,7 +652,7 @@ The final SVM model after resampling using ADASYN and then tuning its hyperparam
 
 4.  *Car insurance deductibles explained*. Progressive. (n.d.).
     Retrieved March 17, 2023, from
-    https://www.progressive.com/answers/car-insurance-deductible/#:\~:text=What%20is%20a%20car%20insurance,have%20a%20car%20insurance%20deductible.
+    https://www.progressive.com/answers/car-insurance-deductible/
 
 5.  Google. (n.d.). *Classification: Accuracy  \|  machine learning  \| 
     google developers*. Google. Retrieved March 20, 2023, from
@@ -664,7 +664,7 @@ The final SVM model after resampling using ADASYN and then tuning its hyperparam
 
 7.  Nian, R. (2019, December 13). *An introduction to ADASYN (with
     code!)*. Medium. Retrieved March 22, 2023, from
-    https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa#:\~:text=ADASYN%20(Adaptive%20Synthetic)%20is%20an,%E2%80%9Charder%20to%20learn%E2%80%9D%20examples.
+    https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa
 
 8.  The_Data_Guy. (1962, November 1). *Parameter "stratify" from method
     "Train_test_split" (scikit learn)*. Stack Overflow. Retrieved March
