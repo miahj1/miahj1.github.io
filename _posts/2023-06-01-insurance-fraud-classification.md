@@ -597,7 +597,7 @@ grid.fit(X_train, y_train)
 print(grid.best_estimator_)
 ```
 
-We can see from the output below that the alogrithm is trying to find the best hyperparameters for the model.
+We can see from the output below that the algorithm is trying to find the best hyperparameters for the model.
 
 ```
 Fitting 5 folds for each of 48 candidates, totalling 240 fits
@@ -623,10 +623,10 @@ The precision score is much better than what the model achieved in the two previ
 
 <p align="center"><strong>Table 2:</strong> <i>Summary of metrics for all three model variants.</i></p>
 
-|     Model           |     Data                    |     Class      |     Precision        |     Recall           |     F1-Score         |     Accuracy    |           TP   FN       <br>FP   TN    |
-|---------------------|-----------------------------|----------------|----------------------|----------------------|----------------------|-----------------|----------------------------------------|
-|     Weighted SVM    |     Imbalanced              |     0 <br>1    |     0.88 <br>0.57    |     0.85 <br>0.64    |     0.86 <br>0.60    |       79%       |     191 35     <br>27  47              |
-|     SVM             |     Balance<br>w/ ADASYN    |     0 <br>1    |     0.93 <br>0.88    |     0.88 <br>0.94    |     0.91 <br>0.91    |       91%       |     165 23     <br>12  175             |
-|     SVM             |     Balanced<br>w/ ADASYN   |     0 <br>1    |     0.97 <br>0.92    |     0.91 <br>0.97    |     0.94 <br>0.94    |       94%       |     172 16     <br>6   181             |
+|     Model           |     Data                    |     Class      |     Precision        |     Recall           |     F1-Score         |     Accuracy    |  TP | FN | FP |  TN   |
+|---------------------|-----------------------------|----------------|----------------------|----------------------|----------------------|-----------------|-----|----|----|-------|
+|     Weighted SVM    |     Imbalanced              |     0 <br>1    |     0.88 <br>0.57    |     0.85 <br>0.64    |     0.86 <br>0.60    |       79%       | 191 | 35 | 27 | 47    |
+|     SVM             |     Balance<br>w/ ADASYN    |     0 <br>1    |     0.93 <br>0.88    |     0.88 <br>0.94    |     0.91 <br>0.91    |       91%       | 165 | 23 | 12 | 175   |
+|     SVM             |     Balanced<br>w/ ADASYN   |     0 <br>1    |     0.97 <br>0.92    |     0.91 <br>0.97    |     0.94 <br>0.94    |       94%       | 172 | 16 |  6 | 181   |
 
 Resampling and tuning the hyperparameters worked well to increase the metrics for every iteration.
