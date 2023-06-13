@@ -1,6 +1,6 @@
 # Insurance Fraud Data Analysis and Classification
 
-##### Table of Contents  
+# Table of Contents  
 - [Introduction](#introduction)
 - [Preprocessing and Investigation](#preprocessing-and-investigation)
   * [Auto-Insurance Domain Knowledge](#auto-insurance-domain-knowledge)
