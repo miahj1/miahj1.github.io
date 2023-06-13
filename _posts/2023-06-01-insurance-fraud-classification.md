@@ -635,3 +635,50 @@ Resampling and tuning the hyperparameters worked well to increase the metrics fo
 ## Conclusion
 
 The final SVM model after resampling using ADASYN and then tuning its hyperparameters using the brute force approach of GridSearchCV gave exceptional scores across the board for precision, recall, f1-score, and accuracy. The model achieved an accuracy score of 94% compared to the previous two models. The 97% recall score for Class 1 shows that the model is correctly identifying most of the fraudulent transactions: the F1-score of 94% suggest that the model is achieving a good balance between precision and recall. However, the rate of false positives values now stands at a value of six. A common issue with fraud classification is the difficulty or challenge of reducing false positives which leaves open the opportunity to try other models; nonetheless, that opportunity was partially explored in this project. In the notebook, I’ve tried other models such as Naïve Bayes and Decision Tree—perhaps at a later more opportune time those two avenues can be considered fully. A consideration such as that would require an understanding of the specific needs and requirements of a business or organization that may use it. Alas, the project has come to a close--thank you for taking the time to follow me along this journey.
+
+## References
+1.  Kagan, J. (2022, December 7). *Combined single limits: Definition,
+    example, benefits, vs. split*. Investopedia. Retrieved March 17,
+    2023, from
+    https://www.investopedia.com/terms/c/combined-single-limits.asp#:\~:text=Combined%20single%20limits%20are%20a,property%20damage%20in%20an%20incident.
+
+2.  Person. (2022, March 30). *What is an umbrella limit in insurance?*
+    WalletHub. Retrieved March 17, 2023, from
+    https://wallethub.com/answers/ci/umbrella-insurance-limits-2140787625/
+
+3.  *What does 500/500 insurance mean?* Policygenius. (n.d.). Retrieved
+    March 17, 2023, from
+    https://www.policygenius.com/auto-insurance/what-does-500-500-insurance-mean/
+
+4.  *Car insurance deductibles explained*. Progressive. (n.d.).
+    Retrieved March 17, 2023, from
+    https://www.progressive.com/answers/car-insurance-deductible/#:\~:text=What%20is%20a%20car%20insurance,have%20a%20car%20insurance%20deductible.
+
+5.  Google. (n.d.). *Classification: Accuracy  \|  machine learning  \| 
+    google developers*. Google. Retrieved March 20, 2023, from
+    https://developers.google.com/machine-learning/crash-course/classification/accuracy
+
+6.  *Adasyn: Adaptive Synthetic Sampling Approach for ... - IEEE
+    xplore*. (n.d.). Retrieved March 22, 2023, from
+    https://ieeexplore.ieee.org/document/4633969
+
+7.  Nian, R. (2019, December 13). *An introduction to ADASYN (with
+    code!)*. Medium. Retrieved March 22, 2023, from
+    https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa#:\~:text=ADASYN%20(Adaptive%20Synthetic)%20is%20an,%E2%80%9Charder%20to%20learn%E2%80%9D%20examples.
+
+8.  The_Data_Guy. (1962, November 1). *Parameter "stratify" from method
+    "Train_test_split" (scikit learn)*. Stack Overflow. Retrieved March
+    22, 2023, from https://stackoverflow.com/a/72092663/6513998
+
+9.  Buntyshah. (2018, October 9). *Insurance fraud claims detection*.
+    Kaggle. Retrieved March 22, 2023, from
+    https://www.kaggle.com/code/buntyshah/insurance-fraud-claims-detection
+
+10. niteshyadav3103. (2022, March 4). *Insurance fraud detection (using
+    12 models)*. Kaggle. Retrieved March 22, 2023, from
+    https://www.kaggle.com/code/niteshyadav3103/insurance-fraud-detection-using-12-models
+
+11. *SVM hyperparameter tuning using GRIDSEARCHCV*. Velocity Business
+    Solutions Limited. (2020, February 19). Retrieved March 22, 2023,
+    from
+    https://www.vebuso.com/2020/03/svm-hyperparameter-tuning-using-gridsearchcv/
