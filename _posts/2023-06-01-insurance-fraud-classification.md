@@ -406,14 +406,15 @@ min_df.drop(drop, inplace=True, axis=1)
 ```
 
 
-Let's look at the implementation of the graph, the parameter `fmt=’.2g’` will move the decimal to two significant figures. 
+Let's look at the implementation of the graph, the parameter `fmt=’.2g’` will move the decimal to two significant figures. The `corr` function is passed
+the `numeric_only = True` to silence a warning message.
 
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 plt.figure(figsize = (18, 12))
-correlation = insurance_claims_df.corr()
+correlation = insurance_claims_df.corr(numeric_only = True)
 sns.heatmap(data=correlation, annot=True, fmt ='.2g', linewidth=2)
 plt.show()
 ```
@@ -491,15 +492,23 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 svc_train_acc = accuracy_score(y_train, svc.predict(X_train))
 svc_test_acc = accuracy_score(y_test, y_pred)
 
-print(f"Training accuracy of Support Vector Classifier is : {svc_train_acc}")
-print(f"Test accuracy of Support Vector Classifier is : {svc_test_acc}")
+print(f"""Training accuracy of Support Vector Classifier is : {svc_train_acc}
+Test accuracy of Support Vector Classifier is : {svc_test_acc}
+      
+Confusion Matrix
+------------------
+{confusion_matrix(y_test, y_pred)}
 
-print(confusion_matrix(y_test, y_pred))
-print(classification_report(y_test, y_pred))
+Classification Report
+------------------
+{classification_report(y_test, y_pred)}""")
 ```
 
+The `f-string` formatting using three single quotes takes on the literal spacing and formatting inside the enclosure: I had to break a few Python indentation rules
+to get everything to be aligned. 
+
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/d0fe830d-6449-4a15-a58c-8b981e3c2271" alt="Ouput for the code shown above.">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/2228cb95-d059-4ddf-b43c-9fd0610381dc" alt="Output for the code shown above.">
 </p>
 
 <p align="center"><strong>Figure 10:</strong> <i>Output of a training accuracy score, a testing accuracy score, a confusion matrix, and a classification report.</i></p><br>
@@ -554,9 +563,38 @@ print(f"y_train: {y_train.shape}, y_test: {y_test.shape}")
 Next, I will fit the resampled data onto the model using the same code previously, and the results are shown in Fig. 14.
 
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/0e55173e-cca5-49ce-9562-eeb0fe7ff403">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/95a7ccef-1517-4691-93de-8ad66c6568e1">
 </p>
 
 <p align="center"><strong>Figure 14:</strong> <i>Metrics for the model.</i></p><br>
 
 The model performed better in the second class increasing the values of the categories by a huge portion: the same can be said of the test accuracy that has gone from 79% to 90%.
+
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/9acda261-bcb6-497d-b6df-2e8e7d5c3777">
+</p>
+
+<p align="center"><strong>Figure 15:</strong> <i>Confusion matrix plot of the model after resampling.</i></p><br>
+
+If we look at the new confusion matrix shown in Fig. 15, there is a steep reduction in false positive values. From the precision metric, we can see that the model predicts insurance fraud with 88% certainty. The results are much better than our previous bout with machine learning, but I believe we can do much better by tuning the hyperparameters.
+
+## Tuning SVM Hyperparameters using GridSearchCV
+
+The GridSearchCV class in the scikit-learn library can help us in attain better results: GridSearchCV is a brute force approach to finding the best hyperparameters for the model. Let’s take a quick overview of SVM’s parameters such as Kernels, C, and Gamma. The primary functionality of kernels is to take low dimensional space and transform it into a higher-dimensional space. As discussed before about the dataset, there is a lack of linear separability between some features and this kernel is useful for such scenarios. C parameter tells the SVM, in-terms of optimization, how much should be avoided when misclassifying each training example. If C is a large value, the optimizer chooses a smaller-margin hyperplane: the optimizer considers its effectiveness in getting all training points classified correctly. A very small C value results in the optimizer looking for a larger-margin separating hyperplane; consequently, it misclassifies more points. Gamma calculates the plausibility of a line of separation. When gamma is high, the nearby points have a high influence. However, if it is low, far away points are considered.
+
+For the dictionary `param_grid`, I used random parameters for each hyperparameter to let `gridsearchcv` brute force through them and find which combinations are the best.
+
+```python
+from sklearn.model_selection import GridSearchCV
+
+param_grid = {'C': [0.1,1, 10, 100], 'gamma': [1,0.1,0.01,0.001],'kernel': ['rbf', 'poly', 'sigmoid']}
+
+grid = GridSearchCV(SVC(),param_grid,refit=True,verbose=2)
+grid.fit(X_train, y_train)
+
+print(grid.best_estimator_)
+```
+
+
+
+
