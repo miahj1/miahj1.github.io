@@ -132,7 +132,8 @@ If someone were to go over the maximum provided by their coverage, the umbrella 
 
 Also, the `policy_deductable` is another feature that has eluded me since I am not familiar with automobile insurance deductibles: it looks like policy deductibles are paid out of pocket on a claim which would be the basic definition. However, there is a bit more to it: a higher deductible would mean more is paid out of pocket, but the car insurance rate is lower, and a lower deductible would mean the car insurance rate is higher, but less is paid out of pocket—the inverse of the former. 
 
-I believe that another feature can be engineered after considering the expenses covered by the insurance provider, but due to time constraints that is something I will leave for the future if I do change my mind.
+I believe that another feature can be engineered after considering the expenses covered by the insurance provider, but it's hard to understand what `capital-gains` and `capital-loss` really means in the data. There's a total of $25,126,100 in capital gains while there is a total of $26,793,700 in capital loss. Does this mean that the company is losing money? It is not the easiest question to answer when there isn't a way to talk to the
+individual who put the data together.
 
 ## Visualizing the Dataset in Python
 
@@ -630,3 +631,7 @@ The precision score is much better than what the model achieved in the two previ
 |     SVM             |     Balanced<br>w/ ADASYN   |     0 <br>1    |     0.97 <br>0.92    |     0.91 <br>0.97    |     0.94 <br>0.94    |       94%       | 172 | 16 |  6 | 181   |
 
 Resampling and tuning the hyperparameters worked well to increase the metrics for every iteration.
+
+## Conclusion
+
+The final SVM model after resampling using ADASYN and then tuning its hyperparameters using the brute force approach of GridSearchCV gave exceptional scores across the board for precision, recall, f1-score, and accuracy. The model achieved an accuracy score of 94% compared to the previous two models. The 97% recall score for Class 1 shows that the model is correctly identifying most of the fraudulent transactions: the F1-score of 94% suggest that the model is achieving a good balance between precision and recall. However, the rate of false positives values now stands at a value of six. A common issue with fraud classification is the difficulty or challenge of reducing false positives which leaves open the opportunity to try other models; nonetheless, that opportunity was partially explored in this project. In the notebook, I’ve tried other models such as Naïve Bayes and Decision Tree—perhaps at a later more opportune time those two avenues can be considered fully. A consideration such as that would require an understanding of the specific needs and requirements of a business or organization that may use it. Alas, the project has come to a close--thank you for taking the time to follow me along this journey.
