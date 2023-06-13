@@ -597,6 +597,34 @@ grid.fit(X_train, y_train)
 print(grid.best_estimator_)
 ```
 
+We can see from the output below that the alogrithm is trying to find the best hyperparameters for the model.
 
+```
+Fitting 5 folds for each of 48 candidates, totalling 240 fits
+[CV] END .........................C=0.1, gamma=1, kernel=rbf; total time=   0.1s
+[CV] END .........................C=0.1, gamma=1, kernel=rbf; total time=   0.1s
+[CV] END .........................C=0.1, gamma=1, kernel=rbf; total time=   0.1s
+[CV] END .........................C=0.1, gamma=1, kernel=rbf; total time=   0.1s
+              ——————————————————-——-— snip ———-—-—————————————————
+[CV] END .................C=100, gamma=0.001, kernel=sigmoid; total time=   0.1s
+[CV] END .................C=100, gamma=0.001, kernel=sigmoid; total time=   0.1s
+[CV] END .................C=100, gamma=0.001, kernel=sigmoid; total time=   0.1s
+SVC(C=10, gamma=0.1)
+```
+The algorithm settles on a C value of `10` and a gamma value of `0.1` for our SVM model. I will now predict the new results using the tuned model.
+
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/50a43691-6018-424e-a627-1101e669f22a">
+</p>
+
+<p align="center"><strong>Figure 16:</strong> <i>Results of the model after using the best parameters.</i></p><br>
+
+The precision score is much better than what the model achieved in the two previous iterations with a 92% certainty for predicting insurance fraud. A summary table of all three previous results are shown in Table 2.
+
+|     Model           |     Data                    |     Class      |     Precision        |     Recall           |     F1-Score         |     Accuracy    |           TP   FN       <br>FP   TN    |
+|---------------------|-----------------------------|----------------|----------------------|----------------------|----------------------|-----------------|----------------------------------------|
+|     Weighted SVM    |     Imbalanced              |     0 <br>1    |     0.88 <br>0.57    |     0.85 <br>0.64    |     0.86 <br>0.60    |       79%       |     191 35     <br>27  47              |
+|     SVM             |     Balance<br>w/ ADASYN    |     0 <br>1    |     0.93 <br>0.88    |     0.88 <br>0.94    |     0.91 <br>0.91    |       91%       |     165 23     <br>12  175             |
+|     SVM             |     Balanced<br>w/ ADASYN   |     0 <br>1    |     0.97 <br>0.92    |     0.91 <br>0.97    |     0.94 <br>0.94    |       94%       |     172 16     <br>6   181             |
 
 
