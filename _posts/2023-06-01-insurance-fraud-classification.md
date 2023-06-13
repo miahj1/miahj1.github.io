@@ -353,8 +353,8 @@ at Fig. 7.
 
 <p align="center"><strong>Figure 7:</strong> <i>Incident totals based on the month of the year.</i></p><br>
 
-The highest amount of incidents peaked in January of 2015 and started to dip from there until reaching a historical low on March. Now,
-let's take a look at the code for the graph.
+The highest amount of incidents peaked in January of 2015 and started to dip from there until reaching a historical low on March. February was also
+a tumultuous month--only slightly decreasing the amount of incidents. Now, let's take a look at the code for the graph.
 
 ```python
 from collections import defaultdict
@@ -380,16 +380,19 @@ plt.plot(months, incident_freq)
 plt.xlabel("Months", fontsize = 13.0)
 plt.ylabel("Total Number of Incidents", fontsize = 13.0)
 ```
+We would first need to grab the column with all the incidents i.e. `incident_dates`, and then declare a dictionary to keep track of the values, `counter`.  I use a `defaultdict` so it returns a zero if nothing is found hence why the argument for it is `int`.  Looping through each value in `incident_dates`  allows me to declare a variable named `month` that uses the `split()` function and subscripts into the value that contains the month in the date. The conditional structure is not the most efficient way of doing this if there were more than just three months used to map each number value to a specific month. `counter[month] += 1` adds up all the occurrences of dates where it matches the months and appends them with a mapping of `month:total` in the dictionary. 
+
+When it comes to graphing, the plot only takes values of type `list`—forcing me to cast the `keys` and `values` of the dictionary. The other bits of code are self-explanatory. In the next section, there are preperations that need to be made before machine learning can be applied to our data.
 
 ## Feature Selection using Seaborn
 
-I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 7.
+I will now use seaborn’s heatmap feature to see the correlation between features as shown in Fig. 8.
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/9c8db755-7d51-4de8-91e2-4fda094d3748">
 </p>
 
-<p align="center"><strong>Figure 7:</strong> <i>Heat map of features and their correlation.</i></p><br>
+<p align="center"><strong>Figure 8:</strong> <i>Heat map of features and their correlation.</i></p><br>
 
 There are a few highly correlated features such as `age` and `months_as_customer`, `total_claim_amount` and `vehicle_claim`, `total_claim_amount` and `property_claim`, and `total_claim_amount` and `injury_claim`. I will drop the column `total_claim_amount` since it is the addition of all the other claim amounts, and I will also drop `age`. An issue with having highly correlated features is that they may become a problem for the linear model I plan to use; however, the dropping of highly correlated features is not as cut and dry. I will drop features that I believe to be useless—or too complex to deal with as of now—in the model such as `auto_make`, `auto_model`, `incident_city`, `incident_location`, `policy_state`, `policy_bind_date`, `incident_date`, `incident_state`, `policy_number`, and `insured_zip`.
 
@@ -448,13 +451,13 @@ combined_df = pd.concat([scaled_num_df, cat_cols], axis=1)
 
 # Pair-Plotting using Seaborn
 
-A pair-plot gives a good idea of the relationship between features, notice that in Fig. 7 there is no linear separability between features, positive correlation, or negative correlation. Also, there’s no visible relationship or trend between the selection of features. I’ve limited the number of features to five: it takes a very long time for plots like this to be produced. The combined dataframe consists of 73 columns where the extra number of columns are dummy columns.
+A pair-plot gives a good idea of the relationship between features, notice that in Fig. 9 there is no linear separability between features, positive correlation, or negative correlation. Also, there’s no visible relationship or trend between the selection of features. I’ve limited the number of features to five: it takes a very long time for plots like this to be produced. The combined dataframe consists of 73 columns where the extra number of columns are dummy columns.
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/70e81089-b31a-4176-b00d-d3f7798d9f29">
 </p>
 
-<p align="center"><strong>Figure 7:</strong> <i>Pair-plot of select features.</i></p><br>
+<p align="center"><strong>Figure 9:</strong> <i>Pair-plot of select features.</i></p><br>
 
 # Fitting the Machine Learning Model
 
@@ -480,7 +483,7 @@ svc.fit(X_train, y_train)
 y_pred = svc.predict(X_test)
 ```
 
-Now, all that is left is to calculate the results of the model using scikit-learn once again: the results of the code are shown in Fig. 8.
+Now, all that is left is to calculate the results of the model using scikit-learn once again: the results of the code are shown in Fig. 10.
 
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -499,15 +502,15 @@ print(classification_report(y_test, y_pred))
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/d0fe830d-6449-4a15-a58c-8b981e3c2271" alt="Ouput for the code shown above.">
 </p>
 
-<p align="center"><strong>Figure 8:</strong> <i>Output of a training accuracy score, a testing accuracy score, a confusion matrix, and a classification report.</i></p><br>
+<p align="center"><strong>Figure 10:</strong> <i>Output of a training accuracy score, a testing accuracy score, a confusion matrix, and a classification report.</i></p><br>
 
-It is shown that the classification training accuracy is 94%: the test accuracy however is a lowly 79%. Metrics such as these are not particularly important when the data is imbalanced hence the usage of a confusion matrix and classification report. I have graphed the confusion matrix to get a clearer picture of what is going on. 
+It is shown that the classification training accuracy is 94%: the test accuracy however is a lowly 79%. Metrics such as these are not particularly important when the data is imbalanced hence the usage of a confusion matrix and classification report. In Fig.11, I have graphed the confusion matrix to get a clearer picture of what is going on. 
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/01f8dcf2-0ad1-4814-ba9c-89a1899f4b2d" alt="Ouput for the code shown above.">
 </p>
 
-<p align="center"><strong>Figure 9:</strong> <i>Confusion matrix of the model, plotted using matplotlib and mlxtend.</i></p><br>
+<p align="center"><strong>Figure 11:</strong> <i>Confusion matrix of the model, plotted using matplotlib and mlxtend.</i></p><br>
 
 The model correctly predicted the positive class `no fraud` 191 times as seen from the True Positive (TP) value: furthermore, the model correctly predicted the negative class `fraud` 47 times. When we look at the remaining diagonal values, there are 35 occasions where the model predicted `no fraud` incorrectly and 27 occasions or false positives where the model predicted fraudulent activity incorrectly. 
 
@@ -529,9 +532,9 @@ print(f"X_res: {X_res.shape}, y_res: {y_res.shape}")
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/3fb51a5b-5ebf-4ce4-ad44-93cbf1a45325">
 </p>
 
-<p align="center"><strong>Figure 10:</strong> <i>Shape of x_res and y_res--showing that they are now balanced.</i></p><br>
+<p align="center"><strong>Figure 12:</strong> <i>Shape of x_res and y_res--showing that they are now balanced.</i></p><br>
 
-ADASYN successfully balanced the data set as shown in Fig. 10 which means there is no need to use a weighted SVM instead I will use the normal SVM. I will once again split the dataset: this time without any specific parameters: I seem to run into certain odd errors if I use any parameters. The shape of the split data can be viewed in Fig. 11.
+ADASYN successfully balanced the data set as shown in Fig. 12 which means there is no need to use a weighted SVM instead I will use the normal SVM. I will once again split the dataset: this time without any specific parameters: I seem to run into certain odd errors if I use any parameters. The shape of the split data can be viewed in Fig. 13.
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -546,14 +549,14 @@ print(f"y_train: {y_train.shape}, y_test: {y_test.shape}")
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/2073e2fb-b1fd-4223-8156-f168d6caa994">
 </p>
 
-<p align="center"><strong>Figure 11:</strong> <i>Shape of x_train, X_test, y_train, and y_test after splitting the data.</i></p><br>
+<p align="center"><strong>Figure 13:</strong> <i>Shape of x_train, X_test, y_train, and y_test after splitting the data.</i></p><br>
 
-Next, I will fit the resampled data onto the model using the same code previously, and the results are shown below.
+Next, I will fit the resampled data onto the model using the same code previously, and the results are shown in Fig. 14.
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/0e55173e-cca5-49ce-9562-eeb0fe7ff403">
 </p>
 
-<p align="center"><strong>Figure 12:</strong> <i>Metrics for the model.</i></p><br>
+<p align="center"><strong>Figure 14:</strong> <i>Metrics for the model.</i></p><br>
 
 The model performed better in the second class increasing the values of the categories by a huge portion: the same can be said of the test accuracy that has gone from 79% to 90%.
