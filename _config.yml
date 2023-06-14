@@ -23,9 +23,10 @@ rss: rss
 
 show_excerpts: false
 
+markdown: kramdown
 kramdown:
-  syntax_highlighter_opts:
-    disable: true
+  input: GFM
+  syntax_highlighter: rouge
   
 plugins:
   - jekyll-feed
