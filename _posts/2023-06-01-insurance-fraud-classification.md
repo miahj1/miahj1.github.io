@@ -107,9 +107,9 @@ for col in cat_cols:
   print(f"{col}: {cat_cols[col].unique()}")
 ```
 
-In this instance, `min_df` is a modified version of the insurance dataset: the modifications will be mentioned later. Table. 1 gives an overview of each column’s unique options where each entry is separated by a space because of shear laziness on my part—certain columns are left out which will be explained later. 
+In this instance, `min_df` is a modified version of the insurance dataset: the modifications will be mentioned later. Table. 1 gives an overview of each categorical column’s unique options where each entry is separated by a comma. 
 
-Table 1: Features that have multiple unique entries for the `insurance_claims` dataset.
+<p align="center"><strong>Table 1:</strong> <i>Features that have multiple unique entries for the insurance claims dataset.</i></p>
 
 | Features    | Unique Entries |
 | -------- | ------- |
