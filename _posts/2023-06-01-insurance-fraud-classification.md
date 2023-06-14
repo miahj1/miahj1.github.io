@@ -1,6 +1,6 @@
 # Insurance Fraud Data Analysis and Classification
 
-Placholder text for testing.
+Placeholder text for testing.
 
 # Table of Contents  
 - [Introduction](#introduction)
