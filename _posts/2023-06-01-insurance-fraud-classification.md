@@ -1,5 +1,7 @@
 # Insurance Fraud Data Analysis and Classification
 
+Placholder text for testing.
+
 # Table of Contents  
 - [Introduction](#introduction)
 - [Preprocessing and Investigation](#preprocessing-and-investigation)
