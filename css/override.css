@@ -55,3 +55,8 @@ pre, code {
 pre {
   padding: 0px;
 }
+
+/* Changing the background of the syntax highlighter. */
+.highlighter-rouge .highlight {
+  background-color: #ffffff;
+}
