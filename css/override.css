@@ -59,6 +59,57 @@ pre {
 }
 
 /* Changing the background of the syntax highlighter. */
+
 .highlighter-rouge .highlight {
   background-color: #ffffff;
+}
+
+/* Removing bolded syntax from default syntax highlighter in main.css */
+
+.highlight .k {
+    font-weight: normal
+}
+
+.highlight .o {
+    font-weight: normal
+}
+
+.highlight .cp {
+    font-weight: normal
+}
+
+.highlight .gs {
+    font-weight: normal
+}
+
+.highlight .kc {
+    font-weight: normal
+}
+
+.highlight .kd {
+    font-weight: normal
+}
+
+.highlight .kp {
+    font-weight: normal
+}
+
+.highlight .kr {
+    font-weight: normal
+}
+
+.highlight .kt {
+    font-weight: normal
+}
+
+.highlight .ne {
+    font-weight: normal
+}
+
+.highlight .nf {
+    font-weight: normal
+}
+
+.highlight .ow {
+    font-weight: normal
 }
