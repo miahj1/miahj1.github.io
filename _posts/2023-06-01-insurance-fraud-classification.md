@@ -33,7 +33,7 @@ insurance_claims_df = insurance_claims_df.drop('_c39', axis=1)
 ```
 
 The piped function below first checks if there are null values in the dataframe using `isna()` and then the `sum()` function
-add up the total amount of null values for each column.
+adds up the total amount of null values for each column.
 
 ```python
 insurance_claims_df.isna().sum()
@@ -83,7 +83,7 @@ fraud_reported                   0
 <p align="center"><strong>Figure 1:</strong> <i>Output of all the summed null values in each column.</i></p><br>
 
 
-The column `police_report_avaliable` has missing data where each one is inputted as “?”—prior to the imputation I have converted each “?” value to NaN using Numpy’s `replace()` function.
+The column `police_report_avaliable` has missing data where each value is inputted as `?`—before performing imputation I have converted each `?` value to `NaN` using Numpy’s `replace()` function.
 
 ```python
 import numpy as np
@@ -98,7 +98,7 @@ them from any EDA analyses but this step is required for later application of ma
 insurance_claims_df = insurance_claims_df.fillna(insurance_claims_df.mode().iloc[0])
 ```
 
-The Kaggle data also did not include the types of values that are given to each categorical column: the code below filters the data types of each column in the data frame by the parameter “object” and prints every unique value. 
+The Kaggle data also did not include the types of values that are given to each categorical column: the code below filters the data types of each column in the data frame by the data's type which is `object` and prints every unique value through a for loop. 
 
 ```python
 cat_cols = min_df.select_dtypes(include=['object'])
@@ -127,7 +127,7 @@ Table 1: Features that have multiple unique entries for the `insurance_claims` d
 | police_report_avaliable | YES, NO |
 | fraud_reported | Y, N |
 
-Before starting a classification project, checking the balance of the datasets does not hurt: the labels in the dataset are binary for `fraud_reported` which contains a value of Y and N—these will be later encoded to 0 and 1 for machine learning purposes. There are 247 fraudulent cases and 753 non-fraudulent cases—a bar graph is shown in Fig. 2. A clear imbalance is visible which can be a problem depending on the type of model that is used for the machine learning section, but that is not the only obstacle: the data is meager and may not be the best for machine learning later the data is resampled to increase the minority class.
+Before starting a classification project, checking the balance of the dataset does not hurt: the labels in the dataset are binary for `fraud_reported` which contains a value of `Y` and `N`—these will be later encoded to `0` and `1` for machine learning purposes. There are 247 fraudulent cases and 753 non-fraudulent cases; a bar graph is shown in Fig. 2. A clear imbalance is visible which can be a problem depending on the type of model that is used for the machine learning section, but that is not the only obstacle. The data is meager and may not be the best for machine learning later the data is resampled to increase the minority class.
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/9db6e418-777b-4608-b60d-ed5803cec456" alt="Bar graph distribution of classes.">
