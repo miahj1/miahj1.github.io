@@ -1,5 +1,10 @@
 # Insurance Fraud Data Analysis and Classification with Python, R, and ChatGPT
 
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/53d1bbce-b7a6-4a15-8958-631f1c7f4de6" alt="A paper on a clipboard that says insurance claim with a tablet on the left side.">
+</p>
+<p align="center" style="color:#727272;">A conceptual illustration with an altered hue of an insurance claim form. <font size="-1">Tashatuvango—-iStock</font></p>
+
 # Table of Contents  
 - [Introduction](#introduction)
 - [Preprocessing and Investigation](#preprocessing-and-investigation)
