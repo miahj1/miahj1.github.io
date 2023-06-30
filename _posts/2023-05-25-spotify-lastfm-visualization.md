@@ -38,18 +38,3 @@ in later years. However, I won't try to do every statistic on this list, but it 
 
 Python will not be used to finalize any visualizations. The matplotlib module is frustrating to use so much that the spotify dev team 
 came up with their own module called [chartify](https://github.com/spotify/chartify) instead of falling into that awful rabbit hole I will use R to finalize visuals.
-
-## Note Test
-
-<div class="note" style='background-color: #7f8fa6; 
-                             color: #ffffff; 
-                             border: solid 2px;
-                             border-color: #718093;
-                             border-radius: 4px;'>
-<span>
-<p style='font-size: large; padding-left: 15px;'>
-<p style='margin-left:1em;'>
-      <i class="fa-solid fa-circle-exclamation"></i></i>&nbsp; <strong>NOTE</strong> This sentence has five words.
-</p>
-</span>
-</div>  
