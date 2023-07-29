@@ -14,7 +14,7 @@ These same security companies near the end of their articles propose the obvious
 them to protect your business. However, phishing isn’t the only feature available with WormGPT: the llm can generate malware code. 
 
 <p align="center">
-  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/45979989-1227-4170-9561-db9ffe65b18f" alt="WormGPT generating malicious Python code through a command prompt..">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/45979989-1227-4170-9561-db9ffe65b18f" alt="WormGPT generating malicious Python code through a command prompt.">
 </p>
 
 <p align="center"><strong>Figure 1:</strong> <i>WormGPT prompted to generate malicious Python code.</i></p><br>
@@ -35,7 +35,8 @@ For phishing e-mails, the tell-tale signs will remain the same e.g., a sense of 
 an unofficial e-mail address, and a request for confidentiality to prevent the victims from seeking advice. We can see below what WormGPT generated
 which closely matches the signs mentoned prior.
 
-![image](https://github.com/miahj1/miahj1.github.io/assets/84815985/73e06de4-5dcb-4510-824c-b25ca878387c)
-
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/73e06de4-5dcb-4510-824c-b25ca878387c" alt="WormGPT generating a phishing message.">
+</p>
 
 There's nothing to fear right now, but the future if llms like these are made using cutting-edge models.
