@@ -6,7 +6,7 @@
 <p align="center" style="color:#727272;">A modified picture of worms depicted in purple, consuming soil. <font size="-1">Tashatuvango —— iStock</font></p>
 
 There’s a couple of relatively unknown security companies posting articles about the new boogeyman in town, WormGPT that’s being used by scary 
-threat actors to create eloquent suspicious phishing e-mails to steal your credentials. WormGPT's base model GPT-J is three years old-——technology advances 
+threat actors to create eloquent suspicious phishing e-mails to steal your credentials. WormGPT's base model GPT-J is three years old——technology advances 
 quickly and this model is nowhere near the robustness and complexity of current models so there’s nothing to worry about since this is only the beginning. 
 
 It’s as if none of these obscure cybersec companies have realized that anyone can create these error free and “convincing” phishing e-mails just by using ChatGPT for free: it doesn’t take a jailbreak prompt to just tell the model that you’re looking to teach some cybersecurity and want an elusive phishing e-mail 
