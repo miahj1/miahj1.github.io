@@ -1,3 +1,5 @@
+# WormGPT is Anything but Scary!
+
 There’s a couple of relatively unknown security companies posting articles about the new boogeyman in town, WormGPT that’s being used by scary 
 threat actors to create eloquent suspicious phishing e-mails to steal your credentials. WormGPT's base model GPT-J is three years old--technology advances 
 quickly and this model is nowhere near the robustness and complexity of current models so there’s nothing to worry about this is only the start. 
