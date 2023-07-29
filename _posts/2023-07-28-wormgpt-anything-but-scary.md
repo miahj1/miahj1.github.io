@@ -5,13 +5,11 @@
 </p>
 <p align="center" style="color:#727272;">A modified picture of worms depicted in purple, consuming soil. <font size="-1">Tashatuvango —— iStock</font></p>
 
-
 There’s a couple of relatively unknown security companies posting articles about the new boogeyman in town, WormGPT that’s being used by scary 
-threat actors to create eloquent suspicious phishing e-mails to steal your credentials. WormGPT's base model GPT-J is three years old--technology advances 
-quickly and this model is nowhere near the robustness and complexity of current models so there’s nothing to worry about this is only the start. 
+threat actors to create eloquent suspicious phishing e-mails to steal your credentials. WormGPT's base model GPT-J is three years old-——technology advances 
+quickly and this model is nowhere near the robustness and complexity of current models so there’s nothing to worry about since this is only the beginning. 
 
-It’s as if none of them have realized that anyone can create these error free and “convincing” phishing e-mails just by using ChatGPT for free: 
-it doesn’t take a jailbreak prompt to just tell the model that you’re looking to teach some cybersecurity and want an elusive phishing e-mail 
+It’s as if none of these obscure cybersec companies have realized that anyone can create these error free and “convincing” phishing e-mails just by using ChatGPT for free: it doesn’t take a jailbreak prompt to just tell the model that you’re looking to teach some cybersecurity and want an elusive phishing e-mail 
 to test your cybersecurity team. Also, it looks like the script kiddies haven’t realized this either and are willing to open their coffers 
 to toss money at a monthly subscription model: WormGPT costs 100 euros monthly while ChatGPT is only a mere $20 a month that’s a 450% increase 
 to use a three-year-old model that’s supposedly trained on malware data.
