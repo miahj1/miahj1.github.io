@@ -25,7 +25,8 @@ the terminal to create a blank text file. I miss those days where I could just r
 txt file. The method that I rely on the most to overcome this oversight is to enter this command in the terminal: 
 <strong>your text > filename.ext</strong>. The `>` output operator will transfer the text into the new file you’re creating--it’s not 
 really a blank file since we populated it with text. [Path Finder](https://www.cocoatech.io) lets you do this quite 
-easily; you’ll need deep pockets for that.
+easily; you’ll need deep pockets for that. While researching for this article, I found a free application
+that adds that feature into finder, [New File Menu Lite](https://apps.apple.com/app/new-file-menu-free/id1066302071).
 
 ## 3.	Copying and Pasting Files isn’t a Feature
 Finder doesn’t have the feature to copy and paste files. The alternative is to duplicate the file by pressing `CMD D` 
