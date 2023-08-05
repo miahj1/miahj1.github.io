@@ -81,7 +81,7 @@ do not bend your cable in any shape or form which is difficult to do—but you s
 isn’t expensive and Anker is one of the best when it comes to cables. Psssst, Apple also cheaped out on the adapters: 
 they don’t maximize the amount of wattage your Macbook can use—M1’s default adapter does 30w while the computer can go up to 65w.
 
-## 9.	Using a third-party Mouse with Macbook is Complicated
+## 9.	Using a Third-Party Mouse with Macbook is Complicated
 Auto-scroll doesn’t work—well it does work if you have an Apple mouse, so your middle mouse wheel is completely useless 
 until you realize there’s a third-party application that brings it back—what would this platform be without these money 
 grubby applications. That’s where Smart Scroll comes in, handing you back the functionality that any normal person would expect 
