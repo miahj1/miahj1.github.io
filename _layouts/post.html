@@ -18,7 +18,9 @@ layout: default
   </header>
 
   <div>
+    {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include analytics.html %}
+    {% endif %}
   </div>
 
   <div class="share-links">
