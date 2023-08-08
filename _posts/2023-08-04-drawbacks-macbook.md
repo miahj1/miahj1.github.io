@@ -29,9 +29,9 @@ easily; you’ll need deep pockets for that. While researching for this article,
 that adds that feature into finder, [New File Menu Lite](https://apps.apple.com/app/new-file-menu-free/id1066302071).
 
 ## 3.	Copying and Pasting Files isn’t a Feature
-Finder doesn’t have the feature to copy and paste files. The alternative is to duplicate the file by pressing `CMD D` 
-and then dragging it to its destination folder which is clunky and takes a few extra steps compared to just doing `CTRL C` 
-and then `CTRL V` on Windows. Moreover, Finder’s search is horrendous, searching up a filename for a file that the user 
+Finder doesn’t have the feature to copy and paste files. The alternative is to duplicate the file by pressing `CMD` `D` 
+and then dragging it to its destination folder which is clunky and takes a few extra steps compared to just doing `CTRL` `C` 
+and then `CTRL` `V` on Windows. Moreover, Finder’s search is horrendous, searching up a filename for a file that the user 
 knows exists takes forever for the algorithm to find—sometimes it doesn’t find it even though it’s right there in front of your eyes. 
 The only solution is to search for it on your own which is much faster than relying on Finder.
 
