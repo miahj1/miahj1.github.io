@@ -90,7 +90,7 @@ The second-best solution—suffice to say the only free solution—is to use bot
 If you thought that was the only mouse feature you were missing, you’re dead wrong: smooth scrolling won’t work either. 
 Thankfully, there’s a free application for it called [Mos](https://mos.caldis.me) which makes scrolling smooth again.
 
-## 10. File Transfer Between Android Phones and Macbook Require Finesse
+## 10. File Transfer Between Android Phones and Macbook Requires Finesse
 File transfer on phones that run on Android OS work only if you’re lucky. Connecting a USB-C cable from the phone to the MacBook’s 
 USB-C adapter won’t make the drive pop-up on the desktop. Rudimentary suggestions on the web recommend using the [Android File 
 Transfer](https://www.android.com/filetransfer/) third-party application. The only catch is that it doesn’t work for everyone. 
