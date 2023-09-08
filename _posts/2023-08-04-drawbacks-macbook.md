@@ -85,7 +85,7 @@ they don’t maximize the amount of wattage your Macbook can use—M1’s defaul
 Auto-scroll doesn’t work—well it does work if you have an Apple mouse, so your middle mouse wheel is completely useless 
 until you realize there’s a third-party application that brings it back—what would this platform be without these money 
 grubby applications. That’s where Smart Scroll comes in, handing you back the functionality that any normal person would expect 
-when they’ve switched to an apple computer;, sadly, it comes with with a price: $14. There’s no free application for it: you’ll have to do without it. 
+when they’ve switched to an apple computer; sadly, it comes with with a price: $14. There’s no free application for it: you’ll have to do without it. 
 The second-best solution—suffice to say the only free solution—is to use both fingers on your touchpad to fast scroll. 
 If you thought that was the only mouse feature you were missing, you’re dead wrong: smooth scrolling won’t work either. 
 Thankfully, there’s a free application for it called [Mos](https://mos.caldis.me) which makes scrolling smooth again.
