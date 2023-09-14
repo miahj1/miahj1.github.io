@@ -119,5 +119,20 @@ We can now search inside the `air_date_body`.
     air_date = air_date_body.find('span', class_='item').text
 ```
 
-If you notice, this is the same method we used to grab the title of the show.
+If you notice, this is the same method we used to grab the title of the show. Moving on, let's try
+to grab the rating of each show. Our tried and true method won't work for the snippet below.
+
+```html
+<div class="scormem-container">
+  <div class="scormem-item score score-label score-7" title="Score">
+    <i class="fa-regular fa-star mr4"></i>7.88
+  </div>
+  ----- snip -----
+</div>
+```
+
+Why wouldn't it work? The child class of `scormem-container` which is `scormem-item score score-label score-7` is not static: 
+it is a dynamic class where the value `7` changes based on the rating of the show. `7` can be assumed as being *n* 
+that corresponds to any integer from 1 to 10 where each integer is represented as a string type. If there is no rating,
+the website falls back on using `na`. 
 
