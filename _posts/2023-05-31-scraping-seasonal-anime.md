@@ -1,7 +1,8 @@
 # Scraping Seasonal Anime Data from MyAnimeList
 
 Anime is released every season i.e. Spring, Winter, Fall, and Summer. The seasons spring and fall showcase huge swaths of multifarious releases unlike winter and summer which have very meager offerings. 
-My goals for this project is to visualize the data after scraping every release for each season for the year of 2022. Let's assume MAL doesn't have an API--at the time of this project I didn't know.
+My goals for this project is to scrape data from MAL to be used for an event I run every season with friends to watch all the new shows that release every new anime season to then finally scope out which shows 
+are worth watching. Let's assume MAL doesn't have an API, at the time of this project I didn't know. 
 
 ## Tools
 1. Beautiful Soup 4 Python Module to scrape and gather the data.
@@ -86,11 +87,31 @@ is the child class, so let's declare a variable `final_title` which uses `find()
 We'll pass in the `a` tag and class `link-title`. The member function `text` extracts the string inside the tag.
 
 ```python
-anime_title = anime_body.find('div', class_ = 'title')
-final_title = anime_title.find('a', class_= 'link-title').text
+    anime_title = anime_body.find('div', class_ = 'title')
+    final_title = anime_title.find('a', class_= 'link-title').text
 ```
 
+Now, let's grab the airing date for each show. The html structure on the website looks like:
 
+```html
+<div class="info">
+  <span class="item">Apr 3, 2016</span>
+  ----- snip -----
+</div>
+```
 
+The parent `div` with class `info` contains the air date of the show in the `span` tag that has the child class `item`. 
+Let's first, use `find()` to get the parent element.
 
+```python
+    air_date_body = anime_body.find('div', class_='info')
+```
+
+We can now search inside the `air_date_body`.
+
+```python
+    air_date = air_date_body.find('span', class_='item').text
+```
+
+If you notice, this is the same method we used to grab the title of the show.
 
