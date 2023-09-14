@@ -141,6 +141,6 @@ the variable the select function's return value. The function is given the name 
 to be replaced with periods for the function to work.
 
 ```python
-rating = anime_body.select("div.scormem-item.score.score-label")
+    rating = anime_body.select("div.scormem-item.score.score-label")
 ```
 
