@@ -1,4 +1,4 @@
-# Scarping Seasonal Anime Data from MyAnimeList
+# Scraping Seasonal Anime Data from MyAnimeList
 
 Anime is released every season i.e. Spring, Winter, Fall, and Summer. The seasons spring and fall showcase huge swaths of multifarious releases unlike winter and summer which have very meager offerings. 
 My goals for this project is to visualize the data after scraping every release for each season for the year of 2022. Let's assume MAL doesn't have an API--at the time of this project I didn't know.
@@ -52,13 +52,11 @@ for anime_body in tv_new.find_all('div', class_="""js-anime-category-producer
 ```
 
 The classname or css selectors seperated by spaces are multiples classes: there's a common misconception where beginner developers tend to think the entire string is a singular class
-without knowing that classes cannot have spaces. `pass` used in the body of the for loop as a placeholder.
-
-
+without knowing that classes cannot have spaces. `pass` is used in the body of the for loop as a placeholder: a special keyword in Python.
 
 There's multiple elements to each individual anime card such as title, rating, members, synopsis, genres, release dates, studios, and number of episodes.
 The member field is a total of all the users that have added the show to their list. There's a few more categorizes that I have not mentioned since
-they are not useful for what I ultimately want which is the name and air date of the show. All the avaliable parameters are shown in Fig. 1.
+they are not useful for what I ultimately want which the name and air date of the show. All the avaliable parameters are shown in Fig. 1.
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/e4ee8f20-07fb-4aba-86c8-159bd6eb5f16" alt="Anime card from myanimelist.">
@@ -66,7 +64,8 @@ they are not useful for what I ultimately want which is the name and air date of
 
 <p align="center"><strong>Figure 1:</strong> <i>Anime card template used for each show on the MAL seasonal anime section of their website.</i></p><br>
 
-We'll from now on work inside the scope of the for loop, to get the title of the show inside each anime card is a class aptly named `title`.
+We'll from now on work inside the scope of the for loop, to get the title of the show inside each anime card is a class aptly named `title`. 
+Below is the corressponding `html` from the website.
 
 ```html
 <div class="title">
