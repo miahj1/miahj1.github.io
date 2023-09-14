@@ -137,10 +137,11 @@ that corresponds to any integer from 1 to 10. If there is no rating, the website
 just doesn't work for classes that have different variants that's where `select()` comes to the rescue.
 
 `select()` allows choosing tags that match two or more css classes. Let's declare a `rating` variable where we assign 
-the variable the select function's return value. The function is given the name of the class; however, spaces need
+the variable the select function's return value. The function is passed the name of the class; however, spaces need
 to be replaced with periods for the function to work.
 
 ```python
     rating = anime_body.select("div.scormem-item.score.score-label")
 ```
 
+If we tried doing `rating.text`, we would get an error since the select function returns a `ResultSet` object.
