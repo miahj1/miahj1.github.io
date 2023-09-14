@@ -253,7 +253,7 @@ argument is used to name each item in the list as follows Air Date, Title, and R
 
 ```python
 import pandas as pd
-
+    # -----snip-----
     if 'season' not in synopsis:
         animes.append([air_date, final_title, preprocess_rating])
 
