@@ -54,7 +54,8 @@ without knowing that classes cannot have spaces. `pass` is used in the body of t
 
 There's multiple elements to each individual anime card such as title, rating, members, synopsis, genres, release dates, studios, and number of episodes.
 The member field is a total of all the users that have added the show to their list. There's a few more categorizes that I have not mentioned since
-they are not useful for what I ultimately want which the name and air date of the show. All the avaliable parameters are shown in Fig. 1.
+they are not useful for what I ultimately want which the name of the show, the air date of the show, and the rating of the show. I also want
+shows that are only on their first season not second, third, or forth. All the avaliable parameters are shown in Fig. 1.
 
 <p align="center">
   <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/e4ee8f20-07fb-4aba-86c8-159bd6eb5f16" alt="Anime card from myanimelist.">
