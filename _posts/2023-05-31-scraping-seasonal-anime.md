@@ -44,10 +44,7 @@ animes = []
 Looping through each element of the `anime_body` gives us each card.
 
 ```python
-for anime_body in tv_new.find_all('div', class_="""js-anime-category-producer 
-                                                   seasonal-anime js-seasonal-anime 
-                                                   js-anime-type-all 
-                                                   js-anime-type-1"""):
+for anime_body in tv_new.find_all('div', class_='js-anime-category-producer seasonal-anime js-seasonal-anime js-anime-type-all js-anime-type-1'):
     pass
 ```
 
