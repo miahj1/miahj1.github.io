@@ -166,3 +166,40 @@ The rating is now in the format `7.33\n        </div>]` to fix this: let's split
 Next, we'll use subscript `[-2]` on the result which is `['7.38', '        </div>]']` to retrieve the rating.
 
 We're almost done; we were able to get the title, air date, and rating: the only thing left is to figure out a way to filter out seasons that aren't the first season.
+It's a bit of a complicated approach, anime series tend to use different variations on the season either it's the final season, the second stage, or the last part. What I
+found to work for most releases is to just look for the string `season` in the synopsis section; however, this is not a fool proof method. Let's take a look at the html,
+we're working with regarding the synopsis section.
+
+```html
+<div class="synopsis js-synopsis">
+  <p class="preline">
+    The appearance of "quirks," newly discovered super powers, has been steadily
+    increasing over the years, with 80 percent of humanity possessing various
+    abilities from manipulation of elements to shapeshifting. This leaves the
+    remainder of the world completely powerless, and Izuku Midoriya is one such
+    individual. Since he was a child, the ambitious middle schooler has wanted
+    nothing more than to be a hero. Izuku's unfair fate leaves him admiring
+    heroes and taking notes on them whenever he can. But it seems that his
+    persistence has borne some fruit: Izuku meets the number one hero and his
+    personal idol, All Might. All Might's quirk is a unique ability that can be
+    inherited, and he has chosen Izuku to be his successor! Enduring many months
+    of grueling training, Izuku enrolls in UA High, a prestigious high school
+    famous for its excellent hero training program, and this year's freshmen
+    look especially promising. With his bizarre but talented classmates and the
+    looming threat of a villainous organization, Izuku will soon learn what it
+    really means to be a hero. [Written by MAL Rewrite]
+  </p>
+  ----- snip -----
+</div>
+```
+
+The parent class `synopsis js-synopsis` is a `div` that contains a `p` or paragraph tag--everything in that `p` tag is what we want.
+
+Let's declare a variable named `synopsis_body` which uses the `find()` member function: I won't give much of an explanation for the code. 
+We have already performed the same method previously twice.
+
+```python
+    synopsis_body = anime_body.find('div', class_='synopsis js-synopsis')
+    synopsis = synopsis_body.find('p', class_='preline').text
+```
+
