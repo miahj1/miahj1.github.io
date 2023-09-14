@@ -15,6 +15,7 @@ spend time with my friends without needing to break a sweat before the event.
 ## Tools
 1. Beautiful Soup 4 Python Module to scrape and gather the data.
 2. Pandas to put a dataframe together using the scraped data.
+3. Browser developer tools which for this scenario is basically inspect element.
 
 ## Scraping
 If there’s a need to capture large amount of data, messaging the website owner would make a lot of sense; however, this isn’t the case for this project. 
