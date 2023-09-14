@@ -144,4 +144,23 @@ to be replaced with periods for the function to work.
     rating = anime_body.select("div.scormem-item.score.score-label")
 ```
 
-If we tried doing `rating.text`, we would get an error since the select function returns a `ResultSet` object.
+If we tried doing `rating.text`, we would get an error since the select function returns a `ResultSet` object. 
+The object contains html snippets of every rating as shown below.
+
+```html
+<div class="scormem-item score score-label score-7" title="Score">
+  <i class="fa-regular fa-star mr4"></i>7.62
+</div>
+```
+
+To pre-process the rating and get it to the formatting, we want we can use the built-in `split()` function.
+Before we begin, let's cast the `rating` variable to type string otherwise `split()` can't do its magic.
+Splitting on the closing italics tag `</i>` gives us `['[<div class="scormem-item score score-label score-7" title="Score">\n<i class="fa-regular fa-star mr4">', '7.33\n        </div>]']`
+which is a list of two items since we only want the last item we can use the subscript `[-1]` to access it.
+
+```python
+preprocess_rating = (str(rating).split('</i>'))[-1].split('\n')[-2]
+```
+
+The rating is now in the format `7.33\n        </div>]` to fix this: let's split again on the newline character, `\n`.
+Next, we'll use subscript `[-2]` on the result which is `['7.38', '        </div>]']` to retrieve the rating.
