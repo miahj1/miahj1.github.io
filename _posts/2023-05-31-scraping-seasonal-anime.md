@@ -1,4 +1,4 @@
-# Scraping Seasonal Anime Data from MyAnimeList
+# Scraping Seasonal Anime Data from MyAnimeList with Beautiful Soup
 
 Anime is released every season i.e. Spring, Winter, Fall, and Summer. The seasons spring and fall showcase huge swaths of multifarious releases unlike winter and summer which have very meager offerings. 
 My goals for this project is to scrape data from MAL to be used for an event I run every season with friends to watch all the new shows that release every new anime season to then finally scope out which shows 
