@@ -203,4 +203,13 @@ We have already performed the same method previously twice.
     synopsis_body = anime_body.find('div', class_='synopsis js-synopsis')
     synopsis = synopsis_body.find('p', class_='preline').text
 ```
+To filter out shows that aren't the first season, checking if `season` is not in the synopsis will work in this case.
 
+```python
+    if 'season' not in synopsis:
+        animes.append(f'{air_date} - {final_title} - {preprocess_rating}')
+```
+
+The code will run the condition and if that condition is true: the code block inside the condition executes where
+the list `animes` is inserted with the `air_date`, `final_title` and `preprocess_rating` values. `f-strings` are
+used to allow combining these variables into one string.
