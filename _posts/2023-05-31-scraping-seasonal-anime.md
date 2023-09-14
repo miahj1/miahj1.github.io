@@ -169,7 +169,7 @@ We're almost done; we were able to get the title, air date, and rating: the only
 bit of a complicated approach, anime series tend to use different variations on the season either its the final season, the second stage, or the last part. What I
 found to work for most releases is to just look for the string `season` in the synopsis section; however, this is not a fool proof method. 
 
-Let's take a look at the html, we're working with regarding the synopsis section.
+Let's take a look at the html we're working with regarding the synopsis section.
 
 ```html
 <div class="synopsis js-synopsis">
