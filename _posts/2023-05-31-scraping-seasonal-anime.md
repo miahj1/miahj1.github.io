@@ -165,9 +165,8 @@ which is a list of two items since we only want the last item we can use the sub
 The rating is now in the format `7.33\n        </div>]` to fix this: let's split again on the newline character, `\n`.
 Next, we'll use subscript `[-2]` on the result which is `['7.38', '        </div>]']` to retrieve the rating.
 
-We're almost done; we were able to get the title, air date, and rating: the only thing left is to figure out a way to filter out seasons that aren't the first season.
-
-It's a bit of a complicated approach, anime series tend to use different variations on the season either its the final season, the second stage, or the last part. What I
+We're almost done; we were able to get the title, air date, and rating: the only thing left is to figure out a way to filter out seasons that aren't the first season. It's a 
+bit of a complicated approach, anime series tend to use different variations on the season either its the final season, the second stage, or the last part. What I
 found to work for most releases is to just look for the string `season` in the synopsis section; however, this is not a fool proof method. 
 
 Let's take a look at the html, we're working with regarding the synopsis section.
