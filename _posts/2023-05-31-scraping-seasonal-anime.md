@@ -237,4 +237,43 @@ May 6, 2016 - Sore Ike! Sabuibo Mask - N/A
 ```
 
 This is awesome, but none of it is in a specific order. If we look at the output, there are two shows that shouldn't 
-be on the list Ushio to Tora (TV) 2nd Season, and Concrete Revolutio: Choujin Gensou - The Last Song.
+be on the list Ushio to Tora (TV) 2nd Season, and Concrete Revolutio: Choujin Gensou - The Last Song. I did say 
+that method before wasn't fool proof.
+
+Organizing the data could be performed just by using a Pandas dataframe. Let's import the module and change
+the values appended to the animes list to a list. The list would look like `[air_date, final_title, preprocess_rating]`.
+This approaches allows us to send in the data to `pd.DataFrame` for Pandas to populate with data. The `columns`
+argument is used to name each item in the list as follows Air Date, Title, and Rating.
+
+```python
+import pandas as pd
+
+    if 'season' not in synopsis:
+        animes.append([air_date, final_title, preprocess_rating])
+
+anime_df = pd.DataFrame(animes, columns=['Air Date', 'Title', 'Rating'])
+print(anime_df)
+```
+
+When the dataframe is completed, we can print it out and this is what we have now.
+
+```
+        Air Date                                              Title Rating
+0    Apr 3, 2016                              Boku no Hero Academia   7.88
+1    Apr 4, 2016              Re:Zero kara Hajimeru Isekai Seikatsu   8.23
+2    Apr 7, 2016                                  Bungou Stray Dogs   7.82
+3    Apr 2, 2016  JoJo no Kimyou na Bouken Part 4: Diamond wa Ku...   8.50
+4    Apr 8, 2016                            Koutetsujou no Kabaneri   7.27
+5    Apr 8, 2016                                  Sakamoto desu ga?   7.55
+6    Apr 9, 2016                                          Kiznaiver   7.38
+7    Apr 7, 2016       Netoge no Yome wa Onnanoko ja Nai to Omotta?   6.70
+8    Apr 6, 2016                                 Sousei no Onmyouji   7.30
+9   Apr 16, 2016                        Magi: Sinbad no Bouken (TV)   7.84
+10   Apr 9, 2016                      Tanaka-kun wa Itsumo Kedaruge   7.83
+  ----- snip -----
+54   May 6, 2016                             Sore Ike! Sabuibo Mask    N/A
+55  Mar 14, 2016                    Ji Jia Shou Shen: Baolie Feiche    N/A
+56   May 3, 2016                                  Muzumuzu Eighteen    N/A
+```
+
+Looks a lot better than what we had before.
