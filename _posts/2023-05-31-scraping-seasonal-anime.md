@@ -211,3 +211,29 @@ To filter out shows that aren't the first season, checking if `season` is not in
 The code will run the condition and if that condition is true: the code block inside the condition executes where
 the list `animes` is inserted with the `air_date`, `final_title` and `preprocess_rating` values. `f-strings` are
 used to allow combining these variables into one string.
+
+If we use a loop to print out the contents of the list, we get:
+
+```
+Apr 1, 2016 - Kagewani: Shou - 6.41
+Apr 1, 2016 - Mayoiga - 5.49
+Apr 1, 2016 - Neko mo, Onda-ke - 5.07
+Apr 1, 2016 - Uchuu Patrol Luluco - 7.54
+Apr 1, 2016 - Ushio to Tora (TV) 2nd Season - 7.90
+Apr 10, 2016 - Concrete Revolutio: Choujin Gensou - The Last Song - 6.99
+Apr 10, 2016 - Flying Witch - 7.51
+Apr 10, 2016 - High School Fleet - 7.31
+Apr 10, 2016 - Tonkatsu DJ Agetarou - 7.13
+Apr 11, 2016 - Sansha Sanyou - 7.10
+Apr 12, 2016 - Usakame - 5.76
+Apr 12, 2016 - Wagamama High Spec - 5.38
+Apr 16, 2016 - Big Order (TV) - 5.36
+  ----- snip -----
+Apr 9, 2016 - Tanaka-kun wa Itsumo Kedaruge - 7.83
+Jun 7, 2016 - Honobono Log - 7.33
+Mar 14, 2016 - Ji Jia Shou Shen: Baolie Feiche - N/A
+May 3, 2016 - Muzumuzu Eighteen - N/A
+May 6, 2016 - Sore Ike! Sabuibo Mask - N/A
+```
+
+This is awesome, but none of it is in a specific order.
