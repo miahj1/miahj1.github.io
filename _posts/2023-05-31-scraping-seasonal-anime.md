@@ -2,9 +2,7 @@
 
 Anime is released every season i.e. Spring, Winter, Fall, and Summer. The seasons spring and fall showcase huge swaths of multifarious releases unlike winter and summer which have very meager offerings. 
 My goals for this project is to scrape data from MAL to be used for an event I run every season with friends to watch all the new shows that release every new anime season to then finally scope out which shows 
-are worth watching.
-
-When I wasn't into scraping, I used to manually scan the website and copy each title and post them in Notion which was rather frustrating and time-consuming: this script has saved me so much time. I can
+are worth watching. When I wasn't into scraping, I used to manually scan the website and copy each title and post them in Notion which was rather frustrating and time-consuming: this script has saved me so much time. I can
 spend time with my friends without needing to break a sweat before the event.
 
 **Disclaimer:** Let's assume MAL doesn't have an API, at the time of this project I didn't know since I know now what I didn't know back then I can't be bothered to use the API after coding this program.
