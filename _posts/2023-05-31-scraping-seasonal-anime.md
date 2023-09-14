@@ -133,6 +133,14 @@ to grab the rating of each show. Our tried and true method won't work for the sn
 
 Why wouldn't it work? The child class of `scormem-container` which is `scormem-item score score-label score-7` is not static: 
 it is a dynamic class where the value `7` changes based on the rating of the show. `7` can be assumed as being *n* 
-that corresponds to any integer from 1 to 10 where each integer is represented as a string type. If there is no rating,
-the website falls back on using `na`. 
+that corresponds to any integer from 1 to 10. If there is no rating, the website falls back on using `na`. The function `find()`
+just doesn't work for classes that have different variants that's where `select()` comes to the rescue.
+
+`select()` allows choosing tags that match two or more css classes. Let's declare a `rating` variable where we assign 
+the variable the select function's return value. The function is given the name of the class; however, spaces need
+to be replaced with periods for the function to work.
+
+```python
+rating = anime_body.select("div.scormem-item.score.score-label")
+```
 
