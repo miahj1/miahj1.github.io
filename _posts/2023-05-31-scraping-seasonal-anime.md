@@ -312,7 +312,7 @@ be sorted. In our case, that column is `Air Date`. The df is sorted: let's see t
 54 2016-05-06                             Sore Ike! Sabuibo Mask    N/A
 28 2016-06-07                                       Honobono Log   7.33
 ```
-
+## Conclusion and Challenges
 That's all I really wanted. If there's a challenge you want to partake in, you can try
 sorting by the rating number which would require imputing the missing values 
 and converting the values to Pandas floating point type. You can also try
