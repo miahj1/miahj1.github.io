@@ -159,7 +159,7 @@ Splitting on the closing italics tag `</i>` gives us `['[<div class="scormem-ite
 which is a list of two items since we only want the last item we can use the subscript `[-1]` to access it.
 
 ```python
-preprocess_rating = (str(rating).split('</i>'))[-1].split('\n')[-2]
+    preprocess_rating = (str(rating).split('</i>'))[-1].split('\n')[-2]
 ```
 
 The rating is now in the format `7.33\n        </div>]` to fix this: let's split again on the newline character, `\n`.
