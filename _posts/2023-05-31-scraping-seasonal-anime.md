@@ -1,5 +1,10 @@
 # Scraping Seasonal Anime Data from MyAnimeList with Beautiful Soup
 
+<p align="center">
+  <img src="https://github.com/miahj1/miahj1.github.io/assets/84815985/93b6b1cc-8a45-4353-81d2-156b4ea3b7e6" alt="Artist illustrating or sketching a manga">
+</p>
+<p align="center" style="color:#727272;">An artist illustrating a manga panel. <font size="-1">Sensay —— iStock</font></p>
+
 Anime is released every season i.e. Spring, Winter, Fall, and Summer. The seasons spring and fall showcase huge swaths of multifarious releases unlike winter and summer which have very meager offerings. 
 My goals for this project is to scrape data from MAL to be used for an event I run every season with friends to watch all the new shows that release every new anime season to then finally scope out which shows 
 are worth watching. When I wasn't into scraping, I used to manually scan the website and copy each title and post them in Notion which was rather frustrating and time-consuming: this script has saved me so much time. I can
