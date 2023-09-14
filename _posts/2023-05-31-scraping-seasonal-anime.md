@@ -276,4 +276,34 @@ When the dataframe is completed, we can print it out and this is what we have no
 56   May 3, 2016                                  Muzumuzu Eighteen    N/A
 ```
 
-Looks a lot better than what we had before.
+Looks a lot better than what we had before. Let's sort the each anime based on its air date, we'll need to
+convert the column to `datetime` to make this easy. We'll use the `apply()` function from Pandas which
+executre a function we give on to every data point in the column `Air Date`. The argument we're sending in to 
+do that conversion is `pd.to_datetime`.
+
+```python
+anime_df["Air Date"] = anime_df["Air Date"].apply(pd.to_datetime)
+anime_df = anime_df.sort_values(by="Air Date")
+```
+
+After that, we can sort the dataframe using `sort_values()` where the `by` argument is set to the column that'll
+be sorted. In our case, that column is `Air Date`. The df is sorted: let's see the results.
+
+```
+     Air Date                                              Title Rating
+55 2016-03-14                    Ji Jia Shou Shen: Baolie Feiche    N/A
+53 2016-04-01                                   Neko mo, Onda-ke   5.07
+15 2016-04-01                                            Mayoiga   5.49
+21 2016-04-01                      Ushio to Tora (TV) 2nd Season   7.90
+17 2016-04-01                                Uchuu Patrol Luluco   7.54
+43 2016-04-01                                     Kagewani: Shou   6.41
+20 2016-04-02        Gyakuten Saiban: Sono "Shinjitsu", Igi Ari!   6.50
+3  2016-04-02  JoJo no Kimyou na Bouken Part 4: Diamond wa Ku...   8.50
+11 2016-04-02                  Gakusen Toshi Asterisk 2nd Season   7.00
+  ----- snip -----
+9  2016-04-16                        Magi: Sinbad no Bouken (TV)   7.84
+14 2016-04-16                                     Big Order (TV)   5.36
+56 2016-05-03                                  Muzumuzu Eighteen    N/A
+54 2016-05-06                             Sore Ike! Sabuibo Mask    N/A
+28 2016-06-07                                       Honobono Log   7.33
+```
