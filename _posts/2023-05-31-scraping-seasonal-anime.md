@@ -236,4 +236,5 @@ May 3, 2016 - Muzumuzu Eighteen - N/A
 May 6, 2016 - Sore Ike! Sabuibo Mask - N/A
 ```
 
-This is awesome, but none of it is in a specific order.
+This is awesome, but none of it is in a specific order. If we look at the output, there are two shows that shouldn't 
+be on the list Ushio to Tora (TV) 2nd Season, and Concrete Revolutio: Choujin Gensou - The Last Song.
