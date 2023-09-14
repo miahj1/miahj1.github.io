@@ -1,4 +1,4 @@
-# Visualizing Seasonal Anime Data
+# Scarping Seasonal Anime Data from MyAnimeList
 
 Anime is released every season i.e. Spring, Winter, Fall, and Summer. The seasons spring and fall showcase huge swaths of multifarious releases unlike winter and summer which have very meager offerings. 
 My goals for this project is to visualize the data after scraping every release for each season for the year of 2022. 
